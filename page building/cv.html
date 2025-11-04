@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,20 +27,9 @@
             border-bottom: 1px solid #f0f0f0;
             padding: 20px 60px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .nav-left {
-            font-size: 14px;
-            color: #000000;
-            font-weight: 500;
-        }
-
-        .nav-right {
-            display: flex;
+            justify-content: flex-end;
             gap: 40px;
+            z-index: 1000;
         }
 
         nav a {
@@ -63,48 +51,50 @@
 
         .container {
             margin-top: 60px;
-            padding: 60px 40px 40px;
-            max-width: 1200px;
+            padding: 80px 100px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .header {
-            text-align: center;
             margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: 300;
-            color: #000000;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
         }
 
         .download-btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: #000000;
-            color: #ffffff;
+            padding: 10px 24px;
+            background: #fafafa;
+            color: #000000;
             text-decoration: none;
+            border: 1px solid #f0f0f0;
             border-radius: 4px;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
         .download-btn:hover {
-            background: #333333;
+            background: #f0f0f0;
         }
 
         .pdf-container {
             width: 100%;
-            height: calc(100vh - 240px);
+            height: calc(100vh - 280px);
             border: 1px solid #f0f0f0;
             border-radius: 4px;
             overflow: hidden;
+            background: #fafafa;
         }
 
         iframe {
@@ -116,9 +106,6 @@
         @media (max-width: 768px) {
             nav {
                 padding: 20px 30px;
-            }
-
-            .nav-right {
                 gap: 20px;
             }
 
@@ -127,28 +114,21 @@
             }
 
             .container {
-                padding: 40px 20px 20px;
-            }
-
-            h1 {
-                font-size: 24px;
+                padding: 60px 30px;
             }
 
             .pdf-container {
-                height: calc(100vh - 220px);
+                height: calc(100vh - 260px);
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="nav-left">Yeeun Grace Hong</div>
-        <div class="nav-right">
-            <a href="index.html">About</a>
-            <a href="#publications">Publications</a>
-            <a href="cv.html" class="active">CV</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="index.html">About</a>
+        <a href="#publications">Publications</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
