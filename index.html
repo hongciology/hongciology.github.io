@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Academic Profile</title>
+    <title>Yeeun Grace Hong</title>
     <style>
         * {
             margin: 0;
@@ -12,99 +12,247 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            font-family: 'Georgia', serif;
+            color: #4a3f35;
+            background: #f9f5f0;
+            line-height: 1.7;
         }
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 20px;
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: #e8d5c4;
+            padding: 60px 40px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            background: #d4b59e;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #8b6f5c;
+        }
+
+        .sidebar h1 {
+            font-size: 28px;
+            color: #6b5444;
+            margin-bottom: 12px;
+            font-weight: 400;
             text-align: center;
-            border-radius: 5px;
+        }
+
+        .sidebar .title {
+            font-size: 16px;
+            color: #8b6f5c;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .sidebar .affiliation {
+            font-size: 15px;
+            color: #9b7f6c;
             margin-bottom: 30px;
+            text-align: center;
         }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #d4b59e;
         }
 
-        header p {
-            font-size: 1.2em;
+        .contact-info h3 {
+            font-size: 14px;
+            color: #c4856b;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .contact-info p {
+            font-size: 14px;
+            color: #8b6f5c;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #8b6f5c;
+            text-decoration: none;
+            border-bottom: 1px dotted #8b6f5c;
+            transition: all 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #6b5444;
+            border-bottom: 1px solid #6b5444;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 60px 80px;
+            background: #fffaf5;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
         }
 
         h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+            font-size: 15px;
+            color: #c4856b;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8d5c4;
         }
 
-        a {
-            color: #3498db;
-            text-decoration: none;
+        p {
+            color: #5a4d40;
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.8;
         }
 
-        a:hover {
-            text-decoration: underline;
+        p:last-child {
+            margin-bottom: 0;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
+        em {
+            color: #8b6f5c;
+            font-style: italic;
+        }
+
+        strong {
+            color: #6b5444;
+            font-weight: 600;
+        }
+
+        .research-areas {
+            color: #8b6f5c;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 50px 40px;
+            }
+
+            .main-content {
+                padding: 50px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                padding: 40px 24px;
+            }
+
+            .main-content {
+                padding: 40px 24px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 50px;
+            }
+
+            .sidebar h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>PhD Student | Department of Computer Science</p>
-        <p>University Name</p>
-    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-photo">YH</div>
+            <h1>Yeeun Grace Hong</h1>
+            <p class="title">Ph.D. Candidate in Sociology</p>
+            <p class="affiliation">University at Albany (SUNY)</p>
+            
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:yhong4@albany.edu">yhong4@albany.edu</a></p>
+            </div>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Welcome! I am a PhD student studying Computer Science at University Name. My research focuses on machine learning and artificial intelligence.</p>
-    </section>
+            <div class="contact-info">
+                <h3>Research Interests</h3>
+                <p>Immigration</p>
+                <p>Race and Ethnicity</p>
+                <p>Gender and Family</p>
+                <p>Asian and Asian American Studies</p>
+                <p>Qualitative Methods</p>
+            </div>
+        </aside>
 
-    <section>
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Machine Learning</li>
-            <li>Artificial Intelligence</li>
-            <li>Data Science</li>
-        </ul>
-    </section>
+        <main class="main-content">
+            <div class="section">
+                <h2>About</h2>
+                <p>I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in immigration, race and ethnicity, gender and family, and Asian and Asian American Studies. My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.</p>
+            </div>
 
-    <section>
-        <h2>Publications</h2>
-        <p><strong>Paper Title</strong> - Conference Name, 2024</p>
-        <p><strong>Another Paper</strong> - Journal Name, 2023</p>
-    </section>
+            <div class="section">
+                <h2>Dissertation</h2>
+                <p><em>"Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships"</em></p>
+                <p>My dissertation explores the ways in which U.S. immigration law and policy influence the intimate relationships and marriage decisions of Asian migrants, revealing how legal status and documentation requirements shape personal choices and family structures.</p>
+                <p><strong>Committee:</strong> Joanna Dreby (chair), Angie Y. Chung, Zawadi Rucks-Ahidiana</p>
+            </div>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@university.edu">your.email@university.edu</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername">@yourusername</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <p><strong>Ph.D., Sociology</strong> (In Progress)<br>
+                    University at Albany (SUNY)<br>
+                    <em>Comprehensive Exams: Immigration, Race and Ethnicity</em></p>
+                </div>
+                <div class="education-item">
+                    <p><strong>M.A., Asian Studies</strong> (2021)<br>
+                    University of Hawaiʻi at Mānoa<br>
+                    <em>Thesis: "Intersecting Hierarchies: Media Representation of Marriage Migrants Under South Korea's Empty Multiculturalism"</em></p>
+                </div>
+                <div class="education-item">
+                    <p><strong>B.A., Sociology and Criminal Justice</strong> (2018)<br>
+                    Gonzaga University<br>
+                    <em>Magna Cum Laude</em></p>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
