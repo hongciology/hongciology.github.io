@@ -18,59 +18,112 @@
             line-height: 1.6;
         }
 
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-size: 12px;
+            color: #666666;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        nav a.active {
+            color: #000000;
+        }
+
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 100px 40px;
+            display: flex;
+            min-height: 100vh;
+            margin-top: 60px;
         }
 
-        header {
-            margin-bottom: 100px;
+        /* Left Sidebar */
+        .sidebar {
+            width: 320px;
+            background: #fafafa;
+            padding: 80px 40px;
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            border-right: 1px solid #f0f0f0;
         }
 
-        h1 {
-            font-size: 48px;
+        .sidebar h1 {
+            font-size: 28px;
             font-weight: 300;
             color: #000000;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: #666666;
+        .sidebar .subtitle {
+            font-size: 11px;
+            color: #999999;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+            margin-bottom: 50px;
+            line-height: 1.6;
         }
 
-        .contact {
-            font-size: 15px;
+        .sidebar .contact {
+            margin-bottom: 50px;
+        }
+
+        .sidebar .contact h3 {
+            font-size: 10px;
+            font-weight: 600;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar .contact p {
+            font-size: 13px;
             color: #666666;
             margin-bottom: 8px;
+            line-height: 1.6;
         }
 
-        .contact a {
+        .sidebar .contact a {
             color: #000000;
             text-decoration: none;
             border-bottom: 1px solid #e0e0e0;
             transition: border-color 0.3s;
         }
 
-        .contact a:hover {
+        .sidebar .contact a:hover {
             border-bottom-color: #000000;
         }
 
         .social-links {
-            margin-top: 20px;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .social-links a {
-            color: #666666;
+            color: #999999;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             transition: color 0.3s;
         }
 
@@ -78,20 +131,23 @@
             color: #000000;
         }
 
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 80px 100px;
+            max-width: 900px;
+        }
+
         .section {
             margin-bottom: 80px;
-            padding-bottom: 80px;
-            border-bottom: 1px solid #f0f0f0;
         }
 
         .section:last-child {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
         h2 {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #999999;
             text-transform: uppercase;
@@ -113,7 +169,6 @@
         em {
             color: #666666;
             font-style: italic;
-            font-size: 15px;
         }
 
         strong {
@@ -124,35 +179,39 @@
         .research-interests {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 10px;
+            gap: 10px;
         }
 
         .interest-tag {
-            padding: 8px 16px;
-            background: #f8f8f8;
+            padding: 6px 14px;
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
             border-radius: 20px;
             font-size: 13px;
             color: #666666;
         }
 
         .education-item {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #f5f5f5;
         }
 
         .education-item:last-child {
             margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .degree {
             font-size: 16px;
             font-weight: 500;
             color: #000000;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .institution {
-            font-size: 15px;
+            font-size: 14px;
             color: #666666;
             margin-bottom: 8px;
         }
@@ -163,86 +222,161 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .container {
-                padding: 60px 24px;
+                flex-direction: column;
             }
 
-            h1 {
-                font-size: 36px;
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 60px 40px;
+                top: 0;
+            }
+
+            .main-content {
+                padding: 60px 40px;
+            }
+
+            nav {
+                padding: 20px 40px;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                padding: 50px 30px;
+            }
+
+            .main-content {
+                padding: 50px 30px;
+            }
+
+            .sidebar h1 {
+                font-size: 24px;
             }
 
             .section {
                 margin-bottom: 60px;
-                padding-bottom: 60px;
             }
 
-            header {
-                margin-bottom: 60px;
+            nav {
+                padding: 20px 30px;
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 11px;
             }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#about" class="active">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <div class="container">
-        <header>
+        <aside class="sidebar">
+            <div style="width: 150px; height: 150px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #cccccc;">YH</div>
             <h1>Yeeun Grace Hong</h1>
-            <p class="subtitle">Sociology | Ph.D. Candidate</p>
-            <p class="contact">University at Albany (SUNY)</p>
-            <p class="contact"><a href="mailto:yhong4@albany.edu">yhong4@albany.edu</a></p>
+            <p class="subtitle">SOCIOLOGY<br>PH.D. CANDIDATE</p>
             
-            <div class="social-links">
-                <a href="https://x.com/hongciology" target="_blank">Twitter</a>
-                <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank">Bluesky</a>
-                <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank">LinkedIn</a>
-            </div>
-        </header>
-
-        <section class="section">
-            <h2>About</h2>
-            <p>I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in immigration, race and ethnicity, gender and family, and Asian and Asian American Studies. My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.</p>
-        </section>
-
-        <section class="section">
-            <h2>Research Interests</h2>
-            <div class="research-interests">
-                <span class="interest-tag">Immigration</span>
-                <span class="interest-tag">Race and Ethnicity</span>
-                <span class="interest-tag">Gender and Family</span>
-                <span class="interest-tag">Asian and Asian American Studies</span>
-                <span class="interest-tag">Qualitative Methods</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Dissertation</h2>
-            <p><em>"Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships"</em></p>
-            <p>Through 90 in-depth interviews with Asian migrants, their intimate partners, and
-community stakeholders across New York City and Seattle, my dissertation explores the ways in which U.S. immigration law and policy influence the intimate relationships and marriage decisions of Asian migrants across the legal status continuum, revealing how legal status and documentation requirements shape personal choices and family structures.</p>
-            <p><strong>Committee:</strong> Joanna Dreby (chair), Angie Y. Chung, Zawadi Rucks-Ahidiana</p>
-        </section>
-
-        <section class="section">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <p class="degree">Ph.D., Sociology (In Progress)</p>
-                <p class="institution">University at Albany (SUNY)</p>
-                <p class="details">Comprehensive Exams: Immigration, Race and Ethnicity</p>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>University at Albany (SUNY)</p>
+                <p><a href="mailto:yhong4@albany.edu">yhong4@albany.edu</a></p>
             </div>
 
-            <div class="education-item">
-                <p class="degree">M.A., Asian Studies (2021)</p>
-                <p class="institution">University of Hawaiʻi at Mānoa</p>
-                <p class="details">Thesis: "Intersecting Hierarchies: Media Representation of Marriage Migrants Under South Korea's Empty Multiculturalism"</p>
+            <div class="contact">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://x.com/hongciology" target="_blank">Twitter</a>
+                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank">Bluesky</a>
+                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank">LinkedIn</a>
+                </div>
             </div>
+        </aside>
 
-            <div class="education-item">
-                <p class="degree">B.A., Sociology and Criminal Justice (2018)</p>
-                <p class="institution">Gonzaga University</p>
-                <p class="details">Magna Cum Laude</p>
-            </div>
-        </section>
+        <main class="main-content">
+            <section class="section" id="about">
+                <h2>About</h2>
+                <p>I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in immigration, race and ethnicity, gender and family, and Asian and Asian American Studies. My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.</p>
+            </section>
+
+            <section class="section">
+                <h2>Research Interests</h2>
+                <div class="research-interests">
+                    <span class="interest-tag">Immigration</span>
+                    <span class="interest-tag">Race and Ethnicity</span>
+                    <span class="interest-tag">Gender and Family</span>
+                    <span class="interest-tag">Asian and Asian American Studies</span>
+                    <span class="interest-tag">Qualitative Methods</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Dissertation</h2>
+                <p><em>"Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships"</em></p>
+                <p>My dissertation explores the ways in which U.S. immigration law and policy influence the intimate relationships and marriage decisions of Asian migrants, revealing how legal status and documentation requirements shape personal choices and family structures.</p>
+                <p><strong>Committee:</strong> Joanna Dreby (chair), Angie Y. Chung, Zawadi Rucks-Ahidiana</p>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <p class="degree">Ph.D., Sociology (In Progress)</p>
+                    <p class="institution">University at Albany (SUNY)</p>
+                    <p class="details">Comprehensive Exams: Immigration, Race and Ethnicity</p>
+                </div>
+
+                <div class="education-item">
+                    <p class="degree">M.A., Asian Studies (2021)</p>
+                    <p class="institution">University of Hawaiʻi at Mānoa</p>
+                    <p class="details">Thesis: "Intersecting Hierarchies: Media Representation of Marriage Migrants Under South Korea's Empty Multiculturalism"</p>
+                </div>
+
+                <div class="education-item">
+                    <p class="degree">B.A., Sociology and Criminal Justice (2018)</p>
+                    <p class="institution">Gonzaga University</p>
+                    <p class="details">Magna Cum Laude</p>
+                </div>
+            </section>
+
+            <section class="section" id="publications">
+                <h2>Publications</h2>
+                <div class="education-item">
+                    <p class="degree">Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study</p>
+                    <p class="institution">Eunju Lee, Joanna Dreby, Yeeun Hong, and Tola Seng</p>
+                    <p class="details"><em>Children and Youth Services Review</em> 172 (May 2025): 108276</p>
+                </div>
+            </section>
+
+            <section class="section" id="cv">
+                <h2>CV</h2>
+                <p>Download my full curriculum vitae for more details about my academic background, research, publications, and professional experience.</p>
+                <p><a href="#" style="color: #000000; text-decoration: none; border-bottom: 1px solid #e0e0e0;">Download CV (PDF)</a></p>
+            </section>
+
+            <section class="section" id="contact">
+                <h2>Contact</h2>
+                <p><strong>Department of Sociology</strong><br>
+                University at Albany (SUNY)<br>
+                Albany, NY</p>
+                <p>Email: <a href="mailto:yhong4@albany.edu" style="color: #000000; text-decoration: none; border-bottom: 1px solid #e0e0e0;">yhong4@albany.edu</a></p>
+                <p>
+                    <a href="https://x.com/hongciology" target="_blank" style="color: #666666; text-decoration: none; margin-right: 15px;">Twitter</a>
+                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" style="color: #666666; text-decoration: none; margin-right: 15px;">Bluesky</a>
+                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" style="color: #666666; text-decoration: none;">LinkedIn</a>
+                </p>
+            </section>
+        </main>
     </div>
 </body>
 </html>
