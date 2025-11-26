@@ -125,11 +125,10 @@
                 align-items: flex-start;
             }
             .pdf-container {
-                max-width: 100%;
+                min-height: auto;
             }
             iframe {
-                height: calc(100vw * 1.414);
-                max-height: 600px;
+                height: calc((100vw - 60px) * 1.414);
             }
             .mobile-message {
                 display: none;
