@@ -83,8 +83,9 @@
         }
         .pdf-container {
             width: 100%;
+            max-width: 794px;
             height: auto;
-            min-height: 800px;
+            margin: 0 auto;
             border: 1px solid #f0f0f0;
             border-radius: 4px;
             overflow: auto;
@@ -93,7 +94,7 @@
         }
         iframe {
             width: 100%;
-            height: 1000px;
+            height: 1123px;
             border: none;
         }
         .mobile-message {
@@ -125,10 +126,11 @@
                 align-items: flex-start;
             }
             .pdf-container {
-                min-height: 400px;
+                max-width: 100%;
             }
             iframe {
-                height: 500px;
+                height: calc(100vw * 1.414);
+                max-height: 600px;
             }
             .mobile-message {
                 display: none;
