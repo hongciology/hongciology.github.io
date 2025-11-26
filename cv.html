@@ -124,14 +124,10 @@
                 align-items: flex-start;
             }
             .pdf-container {
-                height: auto;
-                min-height: 300px;
-            }
-            iframe {
-                display: none;
+                height: calc(100vh - 200px);
             }
             .mobile-message {
-                display: block;
+                display: none;
             }
         }
     </style>
@@ -149,7 +145,7 @@
             <a href="YGHCV.pdf" class="download-btn" download>Download PDF</a>
         </div>
         <div class="pdf-container">
-            <iframe src="YGHCV.pdf#view=FitH&toolbar=1&navpanes=1&scrollbar=1"></iframe>
+            <iframe src="YGHCV.pdf#view=FitH&toolbar=1&navpanes=0&scrollbar=1"></iframe>
             <div class="mobile-message">
                 <p>On mobile devices, tap below to view the PDF in full screen.</p>
                 <a href="YGHCV.pdf" class="download-btn" target="_blank">View CV</a>
