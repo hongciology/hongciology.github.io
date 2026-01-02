@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Yeeun Hong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -59,30 +59,6 @@
             display: none;
         }
 
-        .profile-photo {
-            width: 100%;
-            aspect-ratio: 5 / 7;
-            object-fit: cover;
-            margin-bottom: 25px;
-        }
-
-        .sidebar h1 {
-            font-family: 'Lora', serif;
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        /* Decorative accent under name */
-        .sidebar h1::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            background: #ccc;
-            margin: 15px auto 0;
-        }
-
         .main-content {
             max-width: 100%;
         }
@@ -110,6 +86,16 @@
             border-right: 1px solid #ddd;
         }
 
+        /* Decorative accent under name */
+        .sidebar h1::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: #ccc;
+            margin: 15px auto 0;
+        }
+
         .section {
             margin-bottom: 50px;
             position: relative;
@@ -120,18 +106,26 @@
         }
 
         h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
             margin-bottom: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.7'/%3E%3C/svg%3E");
             background-repeat: repeat-x;
             background-position: 0 100%;
             background-size: auto 8px;
             padding-bottom: 3px;
             display: inline-block;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
 
         .publication-item {
@@ -145,6 +139,10 @@
         .authors {
             font-size: 17px;
             line-height: 1.6;
+        }
+
+        .authors strong {
+            font-weight: 700;
         }
 
         .pub-title {
@@ -174,11 +172,6 @@
             font-size: 15px;
         }
 
-        .authors strong,
-        .pres-details strong {
-            font-weight: 500;
-        }
-
         .presentation-item {
             margin-bottom: 20px;
         }
@@ -197,6 +190,10 @@
             display: inline;
         }
 
+        .pres-details strong {
+            font-weight: 500;
+        }
+
         @media (max-width: 900px) {
             nav ul {
                 gap: 30px;
@@ -206,7 +203,6 @@
                 padding: 0 30px 50px;
             }
 
-            .main-content::before,
             .container::before,
             .container::after {
                 display: none;
@@ -227,7 +223,6 @@
     <div class="container">
         <aside class="sidebar">
             <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="profile-photo">
-            <h1>Yeeun Hong</h1>
         </aside>
 
         <main class="main-content">
@@ -267,38 +262,6 @@
                     <p class="authors"><strong>Hong, Yeeun</strong>, Katelyn HJ Kim, and Paul Y. Chang.</p>
                     <p class="pub-title">"Assimilation Disrupted? How Migrant Wives in South Korea Negotiate Assimilation through Transnational Ties."</p>
                     <p class="status">Manuscript in Preparation</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Selected Academic Presentations</h2>
-                
-                <div class="presentation-item">
-                    <p><span class="year">2025</span> <span class="pres-details">Joanna Dreby and <strong>Yeeun Hong</strong>. "Negotiating Invisibility: The Silencing of Migration Stories in Asian American Communities." American Sociological Association (Paper Session).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2025</span> <span class="pres-details">Eunju Lee, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng. "Immigration Enforcement Episodes during Childhood and Wellbeing of Young Adults: A Mixed Method Study." Society for Social Work and Research (Paper Session).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2024</span> <span class="pres-details">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea." American Sociological Association (Paper Session).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2024</span> <span class="pres-details">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea." Association of Korean Sociologists in America Conference (Roundtable Presentation).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2021</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "Towards a Multicultural Society: Reconstructing Media Representation of Marriage Migrants in South Korea." International Graduate Student Conference (Virtual Presentation).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2020</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "What is Pure Love? The Media Representation of Marriage Migrants in South Korea." School of Pacific and Asian Studies Graduate Student Conference (Conference Canceled due to COVID).</span></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><span class="year">2018</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "A Model or a Minority? Asian International and Asian American Student Experiences of Racial Stereotypes at a Predominantly White University." Pacific Sociological Association (Paper Session).</span></p>
                 </div>
             </section>
         </main>
