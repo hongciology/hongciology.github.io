@@ -6,7 +6,7 @@
     <title>Yeeun Hong</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Oxygen', sans-serif;
+            font-family: 'EB Garamond', serif;
             background: #ffffff;
             color: #000;
             line-height: 1.7;
@@ -33,11 +33,24 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: flex-end;
-            gap: 45px;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
+        }
+
+        nav .logo {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
         }
 
         nav a {
@@ -45,9 +58,9 @@
             color: #666;
             font-size: 14px;
             letter-spacing: 0.03em;
+            font-family: 'EB Garamond', serif;
         }
 
-        nav a.active,
         nav a:hover {
             color: #000;
         }
@@ -65,6 +78,7 @@
         .sidebar {
             padding: 40px 30px;
             text-align: center;
+            font-family: 'EB Garamond', serif;
         }
 
         .profile-photo {
@@ -75,46 +89,40 @@
             margin-bottom: 26px;
         }
 
-        .sidebar h1 {
-            font-family: 'EB Garamond', serif;
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .sidebar .title {
-            font-size: 14px;
-            color: #777;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            line-height: 1.6;
-        }
-
         /* Main content */
         .main-content {
             max-width: 760px;
             padding: 0 40px;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .title-section {
+            margin-bottom: 40px;
+        }
+
+        .main-content h1 {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .brushstroke {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
         }
 
         section {
             margin-bottom: 60px;
-        }
-
-        h2 {
             font-family: 'EB Garamond', serif;
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 22px;
-            display: inline-block;
-            padding-bottom: 4px;
-            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.6'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: 0 100%;
-            background-size: auto 8px;
         }
 
         p {
             margin-bottom: 18px;
+            font-family: 'EB Garamond', serif;
         }
 
         .underline {
@@ -122,27 +130,35 @@
             padding-bottom: 1px;
         }
 
-        /* Education */
-        .education-item {
-            margin-bottom: 26px;
+        /* Contact Info */
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-family: 'EB Garamond', serif;
         }
 
-        .degree {
+        .contact-item {
+            margin-bottom: 12px;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .contact-label {
             font-weight: 700;
-        }
-
-        .institution {
+            font-size: 14px;
             color: #666;
-            font-size: 16px;
+            font-family: 'EB Garamond', serif;
         }
 
-        /* Link */
-        .study-link {
-            display: inline-block;
-            margin-top: 18px;
+        .contact-link {
             color: #000;
+            text-decoration: none;
+            word-break: break-word;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .contact-link:hover {
             text-decoration: underline;
-            font-size: 16px;
         }
 
         /* Responsive */
@@ -158,6 +174,20 @@
             .main-content {
                 padding: 0 30px;
             }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .main-content h1 {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
@@ -166,54 +196,44 @@
 
 <nav>
     <ul>
-        <li><a href="#" class="active">About</a></li>
-        <li><a href="#">Publications</a></li>
-        <li><a href="#">CV</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="logo">Yeeun Hong</li>
+        <li class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Publications</a>
+            <a href="#">CV</a>
+            <a href="#">Contact</a>
+        </li>
     </ul>
 </nav>
 
 <div class="container">
     <aside class="sidebar">
         <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="profile-photo">
-        <h1>Yeeun Hong</h1>
-        <p class="title">Ph.D. Candidate<br>University at Albany (SUNY)</p>
     </aside>
 
     <main class="main-content">
+        <div class="title-section">
+            <h1>Yeeun Hong</h1>
+            <img src="brushstroke.png" alt="underline" class="brushstroke">
+        </div>
         <section>
-            <h2>About</h2>
             <p>
                 I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in
                 <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>.
                 My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.
             </p>
-            <p>
-                Through 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders across New York City and Seattle,
-                <span class="underline">my dissertation examines how Asian migrants navigate intimate relationships</span>
-                when marriage represents both genuine partnership and legal security.
-            </p>
-            <a href="Flyer.pdf" target="_blank" class="study-link">Participate in my study</a>
         </section>
 
-        <section>
-            <h2>Education</h2>
-
-            <div class="education-item">
-                <p class="degree">Ph.D., Sociology (In Progress)</p>
-                <p class="institution">University at Albany (SUNY)</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">Email:</span><br>
+                <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
             </div>
-
-            <div class="education-item">
-                <p class="degree">M.A., Asian Studies (2021)</p>
-                <p class="institution">University of Hawaiʻi at Mānoa</p>
+            <div class="contact-item">
+                <span class="contact-label">ResearchGate:</span><br>
+                <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" class="contact-link">https://www.researchgate.net/profile/Yeeun-Hong-4</a>
             </div>
-
-            <div class="education-item">
-                <p class="degree">B.A., Sociology and Criminal Justice (2018)</p>
-                <p class="institution">Gonzaga University</p>
-            </div>
-        </section>
+        </div>
     </main>
 </div>
 
