@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Yeeun Grace Hong</title>
+    <title>Publications - Yeeun Hong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,133 +13,106 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            color: #1a1a1a;
-            background: #ffffff;
+            font-family: 'PT Serif', serif;
+            background: #fff;
+            color: #000;
             line-height: 1.6;
+            font-size: 17px;
         }
 
-        /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffff;
-            border-bottom: 1px solid #f0f0f0;
-            padding: 20px 60px;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 30px 0;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: flex-end;
-            gap: 40px;
-            z-index: 1000;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
         nav a {
-            font-size: 12px;
-            color: #666666;
+            color: #666;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: #000000;
-        }
-
+        nav a:hover,
         nav a.active {
-            color: #000000;
+            color: #000;
         }
 
         .container {
-            display: flex;
-            min-height: 100vh;
-            margin-top: 60px;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+            position: relative;
         }
 
-        /* Left Sidebar */
         .sidebar {
-            width: 320px;
-            background: #fafafa;
-            padding: 80px 40px;
-            border-right: 1px solid #f0f0f0;
-            text-align: center;
+            display: none;
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 5 / 7;
+            object-fit: cover;
+            margin-bottom: 25px;
         }
 
         .sidebar h1 {
-            font-size: 28px;
-            font-weight: 300;
-            color: #000000;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 25px;
         }
 
-        .sidebar .subtitle {
-            font-size: 11px;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 50px;
-            line-height: 1.6;
+        /* Decorative accent under name */
+        .sidebar h1::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: #ccc;
+            margin: 15px auto 0;
         }
 
-        .sidebar .contact {
-            margin-bottom: 50px;
-        }
-
-        .sidebar .contact h3 {
-            font-size: 10px;
-            font-weight: 600;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-        }
-
-        .sidebar .contact p {
-            font-size: 13px;
-            color: #666666;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        .sidebar .contact a {
-            color: #000000;
-            text-decoration: none;
-            border-bottom: 1px solid #e0e0e0;
-            transition: border-color 0.3s;
-        }
-
-        .sidebar .contact a:hover {
-            border-bottom-color: #000000;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .social-links a {
-            color: #999999;
-            text-decoration: none;
-            font-size: 12px;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #000000;
-        }
-
-        /* Main Content */
         .main-content {
-            flex: 1;
-            padding: 80px 100px;
-            max-width: 900px;
+            max-width: 100%;
+        }
+
+        /* Corner decorations */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: 60px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 50px;
+            position: relative;
         }
 
         .section:last-child {
@@ -146,177 +120,114 @@
         }
 
         h2 {
-            font-size: 11px;
-            font-weight: 600;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            font-size: 16px;
-            color: #333333;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-
-        em {
-            color: #666666;
-            font-style: italic;
-        }
-
-        strong {
-            color: #000000;
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
             font-weight: 500;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.7'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: 0 100%;
+            background-size: auto 8px;
+            padding-bottom: 3px;
+            display: inline-block;
         }
 
         .publication-item {
-            margin-bottom: 35px;
-            padding-bottom: 35px;
-            border-bottom: 1px solid #f5f5f5;
+            margin-bottom: 25px;
         }
 
         .publication-item:last-child {
             margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
         }
 
-        .pub-authors {
-            font-size: 15px;
-            color: #333333;
-            margin-bottom: 8px;
+        .authors {
+            font-size: 17px;
             line-height: 1.6;
         }
 
         .pub-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #000000;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        .pub-venue {
-            font-size: 14px;
-            color: #666666;
-            margin-bottom: 6px;
             font-style: italic;
+            margin-top: 3px;
         }
 
-        .pub-details {
-            font-size: 14px;
-            color: #999999;
+        .venue {
+            color: #666;
+            margin-top: 3px;
         }
 
-        .pub-link {
-            color: #000000;
-            text-decoration: none;
-            border-bottom: 1px solid #e0e0e0;
-            transition: border-color 0.3s;
-        }
-
-        .pub-link:hover {
-            border-bottom-color: #000000;
-        }
-
-        .status-tag {
+        .doi-link {
+            color: #000;
+            text-decoration: underline;
+            margin-top: 3px;
             display: inline-block;
-            padding: 4px 12px;
-            background: #fafafa;
-            border: 1px solid #f0f0f0;
-            border-radius: 12px;
-            font-size: 11px;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 6px;
         }
 
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-            }
+        .doi-link:hover {
+            text-decoration: none;
+        }
 
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding: 60px 40px;
-                top: 0;
-            }
+        .status {
+            color: #999;
+            margin-top: 3px;
+            font-size: 15px;
+        }
 
-            .main-content {
-                padding: 60px 40px;
-            }
+        .authors strong,
+        .pres-details strong {
+            font-weight: 500;
+        }
 
-            nav {
-                padding: 20px 40px;
+        .presentation-item {
+            margin-bottom: 20px;
+        }
+
+        .presentation-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .year {
+            font-weight: 500;
+            display: inline-block;
+            width: 45px;
+        }
+
+        .pres-details {
+            display: inline;
+        }
+
+        @media (max-width: 900px) {
+            nav ul {
                 gap: 30px;
             }
-        }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                padding: 50px 30px;
+            .container {
+                padding: 0 30px 50px;
             }
 
-            .main-content {
-                padding: 50px 30px;
-            }
-
-            .sidebar h1 {
-                font-size: 24px;
-            }
-
-            .section {
-                margin-bottom: 60px;
-            }
-
-            nav {
-                padding: 20px 30px;
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 11px;
+            .main-content::before,
+            .container::before,
+            .container::after {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">About</a>
-        <a href="publications.html" class="active">Publications</a>
-        <a href="cv.html">CV</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#" class="active">Publications</a></li>
+            <li><a href="#">CV</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
 
     <div class="container">
         <aside class="sidebar">
-            <img src="https://hongciology.github.io/IMG_0781.jpg" alt="Yeeun (Grace) Hong" style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 30px; display: block; object-fit: cover;">
-            <h1>Yeeun (Grace) Hong</h1>
-            <p class="subtitle">SOCIOLOGY<br>PH.D. CANDIDATE</p>
-            
-            <div class="contact">
-                <h3>Contact</h3>
-                <p>University at Albany (SUNY)</p>
-                <p><a href="mailto:yhong4@albany.edu">yhong4@albany.edu</a></p>
-            </div>
-
-            <div class="contact">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="https://x.com/hongciology" target="_blank">Twitter</a>
-                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank">Bluesky</a>
-                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+            <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="profile-photo">
+            <h1>Yeeun Hong</h1>
         </aside>
 
         <main class="main-content">
@@ -324,10 +235,10 @@
                 <h2>Publications</h2>
                 
                 <div class="publication-item">
-                    <p class="pub-authors">Lee, Eunju, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng</p>
-                    <p class="pub-title">"Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study"</p>
-                    <p class="pub-venue">Children and Youth Services Review</p>
-                    <p class="pub-details">Volume 172 (May 2025): 108276. <a href="https://doi.org/10.1016/j.childyouth.2025.108276" class="pub-link" target="_blank">https://doi.org/10.1016/j.childyouth.2025.108276</a></p>
+                    <p class="authors">Lee, Eunju, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng.</p>
+                    <p class="pub-title">"Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study."</p>
+                    <p class="venue">Children and Youth Services Review 172 (May 2025): 108276.</p>
+                    <a href="https://doi.org/10.1016/j.childyouth.2025.108276" class="doi-link" target="_blank">https://doi.org/10.1016/j.childyouth.2025.108276</a>
                 </div>
             </section>
 
@@ -335,61 +246,59 @@
                 <h2>Work in Progress</h2>
                 
                 <div class="publication-item">
-                    <p class="pub-authors">Dreby, Joanna and <strong>Yeeun Hong</strong></p>
-                    <p class="pub-title">""But We Don't Talk About It": Silencing and Legal Precarity Among First- and Second-Generation Asian Immigrants"</p>
-                    <span class="status-tag">Under Review at Social Problems</span>
+                    <p class="authors">Dreby, Joanna and <strong>Yeeun Hong</strong>.</p>
+                    <p class="pub-title">"But We Don't Talk About It": Silencing and Legal Precarity Among First- and Second-Generation Asian Immigrants."</p>
+                    <p class="status">Under review at Social Problems</p>
                 </div>
 
                 <div class="publication-item">
-                    <p class="pub-authors"><strong>Hong, Yeeun</strong>, Jane Jia-Yin Wang, and Angie Y. Chung</p>
-                    <p class="pub-title">"Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of The United States, China, and South Korea"</p>
-                    <span class="status-tag">Manuscript in Preparation</span>
+                    <p class="authors"><strong>Hong, Yeeun</strong>.</p>
+                    <p class="pub-title">"Double Precarity: The Intersecting Vulnerabilities of LGBTQ+ Asian Immigrants."</p>
+                    <p class="status">Manuscript in Preparation</p>
+                </div>
+
+                <div class="publication-item">
+                    <p class="authors"><strong>Hong, Yeeun</strong>, Jane Jia-Yin Wang, and Angie Y. Chung.</p>
+                    <p class="pub-title">"Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the United States, China, and South Korea."</p>
+                    <p class="status">Manuscript in Preparation</p>
+                </div>
+
+                <div class="publication-item">
+                    <p class="authors"><strong>Hong, Yeeun</strong>, Katelyn HJ Kim, and Paul Y. Chang.</p>
+                    <p class="pub-title">"Assimilation Disrupted? How Migrant Wives in South Korea Negotiate Assimilation through Transnational Ties."</p>
+                    <p class="status">Manuscript in Preparation</p>
                 </div>
             </section>
 
             <section class="section">
                 <h2>Selected Academic Presentations</h2>
                 
-                <div class="publication-item">
-                    <p class="pub-authors">Joanna Dreby and <strong>Yeeun Hong</strong> (2025)</p>
-                    <p class="pub-title">"Negotiating Invisibility: The Silencing of Migration Stories in Asian American Communities"</p>
-                    <p class="pub-venue">American Sociological Association (Paper Session)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2025</span> <span class="pres-details">Joanna Dreby and <strong>Yeeun Hong</strong>. "Negotiating Invisibility: The Silencing of Migration Stories in Asian American Communities." American Sociological Association (Paper Session).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors">Eunju Lee, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng (2025)</p>
-                    <p class="pub-title">"Immigration Enforcement Episodes during Childhood and Wellbeing of Young Adults: A Mixed Method Study"</p>
-                    <p class="pub-venue">Society for Social Work and Research (Paper Session)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2025</span> <span class="pres-details">Eunju Lee, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng. "Immigration Enforcement Episodes during Childhood and Wellbeing of Young Adults: A Mixed Method Study." Society for Social Work and Research (Paper Session).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim (2024)</p>
-                    <p class="pub-title">"Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea"</p>
-                    <p class="pub-venue">American Sociological Association (Paper Session)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2024</span> <span class="pres-details">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea." American Sociological Association (Paper Session).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim (2024)</p>
-                    <p class="pub-title">"Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea"</p>
-                    <p class="pub-venue">Association of Korean Sociologists in America Conference (Roundtable Presentation)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2024</span> <span class="pres-details">Jane Jia-Yin Wang, <strong>Yeeun Hong</strong>, Angie Y. Chung, and Soohan Kim. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the U.S., China, and South Korea." Association of Korean Sociologists in America Conference (Roundtable Presentation).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors"><strong>Yeeun Hong</strong> (2021)</p>
-                    <p class="pub-title">"Towards a Multicultural Society: Reconstructing Media Representation of Marriage Migrants in South Korea"</p>
-                    <p class="pub-venue">International Graduate Student Conference (Virtual Presentation)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2021</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "Towards a Multicultural Society: Reconstructing Media Representation of Marriage Migrants in South Korea." International Graduate Student Conference (Virtual Presentation).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors"><strong>Yeeun Hong</strong> (2020)</p>
-                    <p class="pub-title">"What is Pure Love? The Media Representation of Marriage Migrants in South Korea"</p>
-                    <p class="pub-venue">School of Pacific and Asian Studies Graduate Student Conference (Conference Canceled due to COVID)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2020</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "What is Pure Love? The Media Representation of Marriage Migrants in South Korea." School of Pacific and Asian Studies Graduate Student Conference (Conference Canceled due to COVID).</span></p>
                 </div>
 
-                <div class="publication-item">
-                    <p class="pub-authors"><strong>Yeeun Hong</strong> (2018)</p>
-                    <p class="pub-title">"A Model or a Minority? Asian International and Asian American Student Experiences of Racial Stereotypes at a Predominantly White University"</p>
-                    <p class="pub-venue">Pacific Sociological Association (Paper Session)</p>
+                <div class="presentation-item">
+                    <p><span class="year">2018</span> <span class="pres-details"><strong>Yeeun Hong</strong>. "A Model or a Minority? Asian International and Asian American Student Experiences of Racial Stereotypes at a Predominantly White University." Pacific Sociological Association (Paper Session).</span></p>
                 </div>
             </section>
         </main>
