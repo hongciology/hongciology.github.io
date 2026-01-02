@@ -86,7 +86,6 @@
             padding-bottom: 80px;
             gap: 60px;
             align-items: center;
-            min-height: calc(100vh - 200px);
         }
 
         /* Sidebar */
@@ -109,6 +108,15 @@
             margin-bottom: 26px;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        .content-photo {
+            display: none;
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 5 / 7;
+            object-fit: cover;
+            margin: 30px 0;
         }
 
         /* Main content */
@@ -233,68 +241,23 @@
                 font-weight: 600;
             }
 
-            body {
-                font-size: 18px;
+            .content-photo {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
             }
 
             .container {
                 grid-template-columns: 1fr;
-                padding: 0;
+                padding: 0 20px;
                 gap: 0;
-                min-height: auto;
-            }
-
-            .sidebar {
-                padding: 0;
-                order: -1;
-            }
-
-            .profile-photo {
-                max-width: 100%;
-                width: 100%;
-                margin-bottom: 0;
-                aspect-ratio: 5 / 7;
             }
 
             .main-content {
-                padding: 30px 20px;
+                padding: 0;
                 max-width: 100%;
-            }
-
-            .title-section {
-                display: none;
-            }
-
-            .main-content h1 {
-                font-size: 36px;
-            }
-
-            .brush-underline {
-                width: 280px;
-                margin-bottom: 25px;
-            }
-
-            section {
-                margin-bottom: 20px;
-            }
-
-            p {
-                font-size: 18px;
-                margin-bottom: 10px;
-                line-height: 1.8;
-            }
-
-            .contact-info {
-                margin-top: 20px;
-                padding-top: 20px;
-            }
-
-            .contact-label {
-                font-size: 16px;
-            }
-
-            .contact-link {
-                font-size: 18px;
             }
         }
 
@@ -306,10 +269,12 @@
 
             nav .logo-link {
                 font-size: 28px;
+                font-weight: 600;
             }
 
             nav .logo {
                 font-size: 28px;
+                font-weight: 600;
             }
 
             nav ul {
@@ -328,38 +293,22 @@
             }
 
             .container {
-                padding: 0;
+                padding: 0 15px;
                 gap: 0;
             }
 
-            .sidebar {
-                align-items: flex-start;
-            }
-
-            .profile-photo {
-                max-width: 100%;
-                width: 100%;
-            }
-
             .main-content {
-                padding: 20px 15px;
-            }
-
-            .main-content h1 {
-                font-size: 28px;
-            }
-
-            .brush-underline {
-                width: 220px;
+                padding: 0;
             }
 
             p {
                 font-size: 18px;
+                line-height: 1.8;
             }
 
-            .contact-info {
-                margin-top: 25px;
-                padding-top: 25px;
+            .content-photo {
+                margin: 25px 0;
+                max-width: 280px;
             }
         }
     </style>
@@ -395,6 +344,13 @@
             <p>
                 I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in
                 <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>.
+            </p>
+        </section>
+
+        <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="content-photo">
+
+        <section>
+            <p>
                 My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.
             </p>
         </section>
