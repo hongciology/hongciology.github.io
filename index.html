@@ -86,6 +86,7 @@
             padding-bottom: 80px;
             gap: 60px;
             align-items: center;
+            min-height: calc(100vh - 200px);
         }
 
         /* Sidebar */
@@ -222,10 +223,25 @@
 
         /* Responsive */
         @media (max-width: 900px) {
+            nav .logo-link {
+                font-size: 32px;
+                font-weight: 600;
+            }
+
+            nav .logo {
+                font-size: 32px;
+                font-weight: 600;
+            }
+
+            body {
+                font-size: 18px;
+            }
+
             .container {
                 grid-template-columns: 1fr;
                 padding: 0;
                 gap: 0;
+                min-height: auto;
             }
 
             .sidebar {
@@ -263,13 +279,22 @@
             }
 
             p {
-                font-size: 16px;
+                font-size: 18px;
                 margin-bottom: 10px;
+                line-height: 1.8;
             }
 
             .contact-info {
                 margin-top: 20px;
                 padding-top: 20px;
+            }
+
+            .contact-label {
+                font-size: 16px;
+            }
+
+            .contact-link {
+                font-size: 18px;
             }
         }
 
@@ -277,6 +302,14 @@
             nav {
                 padding: 20px 0;
                 margin-bottom: 30px;
+            }
+
+            nav .logo-link {
+                font-size: 28px;
+            }
+
+            nav .logo {
+                font-size: 28px;
             }
 
             nav ul {
@@ -321,7 +354,7 @@
             }
 
             p {
-                font-size: 15px;
+                font-size: 18px;
             }
 
             .contact-info {
