@@ -1,327 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeeun Hong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'PT Serif', serif;
-            background: #fff;
-            color: #000;
-            line-height: 1.6;
-            font-size: 17px;
-        }
+body {
+    font-family: 'Muli', sans-serif;
+    background: #fff;
+    color: #000;
+    line-height: 1.7;
+    font-size: 17px;
+}
 
-        nav {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 30px 0;
-            margin-bottom: 40px;
-        }
+/* Navigation */
+nav {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 30px 0;
+    margin-bottom: 50px;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            gap: 50px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
 
-        nav a {
-            color: #666;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.2s;
-        }
+nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+}
 
-        nav a:hover,
-        nav a.active {
-            color: #000;
-        }
+nav a:hover,
+nav a.active {
+    color: #000;
+}
 
-        .container {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 0 60px 0;
-            gap: 0;
-            position: relative;
-        }
+/* Layout */
+.container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
 
-        .sidebar {
-            height: fit-content;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            position: sticky;
-            top: 0;
-            background: #f8f8f8;
-            padding: 40px 30px;
-            min-height: 100vh;
-        }
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 40px;
+    padding: 50px 40px;
+    background: #fafafa;
+    border-right: 1px solid #eee;
+    min-height: calc(100vh - 80px);
+    text-align: center;
+}
 
-        .profile-photo {
-            width: 100%;
-            aspect-ratio: 5 / 7;
-            object-fit: cover;
-            margin-bottom: 30px;
-        }
+.profile-photo {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    margin-bottom: 28px;
+    border-radius: 4px;
+}
 
-        .sidebar h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
+.sidebar h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
 
-        .sidebar .title {
-            font-family: 'PT Serif', serif;
-            font-size: 15px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #888;
-            text-transform: uppercase;
-        }
+.sidebar .title {
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
 
-        .sidebar-section {
-            margin-bottom: 30px;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-        }
+/* Main content */
+.main-content {
+    max-width: 780px;
+    padding: 0 60px;
+}
 
-        .sidebar-section:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
+/* Sections */
+.section {
+    margin-bottom: 60px;
+}
 
-        .sidebar-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #999;
-        }
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    display: inline-block;
+    padding-bottom: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.6'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-size: auto 8px;
+}
 
-        .sidebar-section p {
-            font-size: 15px;
-            margin-bottom: 6px;
-            line-height: 1.8;
-        }
+p {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
 
-        .sidebar-section a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+.underline {
+    border-bottom: 1px solid #000;
+    padding-bottom: 1px;
+}
 
-        .sidebar-section a:hover {
-            color: #000;
-        }
+/* Education */
+.education-item {
+    margin-bottom: 28px;
+}
 
-        /* Decorative elements */
-        .main-content {
-            max-width: 650px;
-            padding: 0 40px;
-        }
+.degree {
+    font-weight: 600;
+}
 
-        /* Corner decorations */
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 300px;
-            width: 40px;
-            height: 40px;
-            border-top: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-        }
+.institution {
+    color: #666;
+    font-size: 16px;
+}
 
-        .container::after {
-            content: '';
-            position: absolute;
-            bottom: 60px;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            border-bottom: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-        }
+/* Study link */
+.study-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #000;
+}
 
-        /* Dots next to sections */
-        .section {
-            margin-bottom: 50px;
-            position: relative;
-        }
+/* Responsive */
+@media (max-width: 900px) {
+    nav ul {
+        padding: 0 30px;
+    }
 
-        .section:last-child {
-            margin-bottom: 0;
-        }
+    .container {
+        grid-template-columns: 1fr;
+    }
 
-        .section:last-child {
-            margin-bottom: 0;
-        }
+    .sidebar {
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 18px;
-            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.7'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: 0 100%;
-            background-size: auto 8px;
-            padding-bottom: 3px;
-            display: inline-block;
-        }
-
-        p {
-            font-size: 17px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-
-        em {
-            font-style: italic;
-        }
-
-        .underline {
-            border-bottom: 1px solid #000;
-            padding-bottom: 2px;
-            display: inline;
-        }
-
-        .straight-underline {
-            text-decoration: underline;
-            text-decoration-thickness: 1.5px;
-            text-underline-offset: 3px;
-        }
-
-        .education-item {
-            margin-bottom: 25px;
-        }
-
-        .education-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .degree {
-            font-size: 17px;
-            font-weight: 500;
-            margin-bottom: 3px;
-        }
-
-        .institution {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 3px;
-        }
-
-        .details {
-            font-size: 16px;
-            color: #999;
-        }
-
-        .study-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #000;
-            text-decoration: underline;
-            font-size: 17px;
-        }
-
-        .study-link:hover {
-            text-decoration: none;
-        }
-
-        @media (max-width: 900px) {
-            nav ul {
-                gap: 30px;
-            }
-
-            .container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                padding: 0 30px 50px;
-            }
-
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-
-            .profile-photo {
-                max-width: 280px;
-            }
-
-            .main-content::before,
-            .container::before,
-            .container::after {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#" class="active">About</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">CV</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <aside class="sidebar">
-            <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="profile-photo">
-            <h1>Yeeun Hong</h1>
-            <p class="title">Ph.D. Candidate<br>University at Albany (SUNY)</p>
-        </aside>
-
-        <main class="main-content">
-            <section class="section">
-                <h2>About</h2>
-                <p>I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>. My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.</p>
-                <p>Through 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders across New York City and Seattle, <span class="underline">my dissertation examines how Asian migrants navigate intimate relationships</span> when marriage represents both genuine partnership and legal security. By looking at how immigration policies shape dating and marriage experiences among Asian migrants during an unprecedented era of immigration enforcement, this project reveals the ways in which structural power is lived and negotiated in the most personal spaces of everyday life.</p>
-                <a href="Flyer.pdf" target="_blank" class="study-link">Participate in my study</a>
-            </section>
-
-            <section class="section">
-                <h2>Education</h2>
-                
-                <div class="education-item">
-                    <p class="degree">Ph.D., Sociology (In Progress)</p>
-                    <p class="institution">University at Albany (SUNY)</p>
-                </div>
-
-                <div class="education-item">
-                    <p class="degree">M.A., Asian Studies (2021)</p>
-                    <p class="institution">University of Hawaiʻi at Mānoa</p>
-                </div>
-
-                <div class="education-item">
-                    <p class="degree">B.A., Sociology and Criminal Justice (2018)</p>
-                    <p class="institution">Gonzaga University</p>
-                </div>
-            </section>
-        </main>
-    </div>
-</body>
-</html>
+    .main-content {
+        padding: 40px 30px 0;
+    }
+}
