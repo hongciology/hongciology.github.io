@@ -1,164 +1,221 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeeun Hong</title>
 
-body {
-    font-family: 'Muli', sans-serif;
-    background: #fff;
-    color: #000;
-    line-height: 1.7;
-    font-size: 17px;
-}
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
 
-/* Navigation */
-nav {
-    border-bottom: 1px solid #e0e0e0;
-    padding: 30px 0;
-    margin-bottom: 50px;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 50px;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 0 60px;
-}
+        body {
+            font-family: 'Oxygen', sans-serif;
+            background: #ffffff;
+            color: #000;
+            line-height: 1.7;
+            font-size: 17px;
+        }
 
-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-}
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 28px 0;
+            margin-bottom: 50px;
+        }
 
-nav a:hover,
-nav a.active {
-    color: #000;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 45px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
 
-/* Layout */
-.container {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding-bottom: 80px;
-}
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+        }
 
-/* Sidebar */
-.sidebar {
-    position: sticky;
-    top: 40px;
-    padding: 50px 40px;
-    background: #fafafa;
-    border-right: 1px solid #eee;
-    min-height: calc(100vh - 80px);
-    text-align: center;
-}
+        nav a.active,
+        nav a:hover {
+            color: #000;
+        }
 
-.profile-photo {
-    width: 100%;
-    max-width: 240px;
-    aspect-ratio: 5 / 7;
-    object-fit: cover;
-    margin-bottom: 28px;
-    border-radius: 4px;
-}
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
 
-.sidebar h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
+        /* Sidebar */
+        .sidebar {
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-.sidebar .title {
-    font-size: 14px;
-    color: #777;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    line-height: 1.6;
-}
+        .profile-photo {
+            width: 100%;
+            max-width: 230px;
+            aspect-ratio: 5 / 7;
+            object-fit: cover;
+            margin-bottom: 26px;
+        }
 
-/* Main content */
-.main-content {
-    max-width: 780px;
-    padding: 0 60px;
-}
+        .sidebar h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
 
-/* Sections */
-.section {
-    margin-bottom: 60px;
-}
+        .sidebar .title {
+            font-size: 14px;
+            color: #777;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1.6;
+        }
 
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 22px;
-    display: inline-block;
-    padding-bottom: 6px;
-    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.6'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-position: 0 100%;
-    background-size: auto 8px;
-}
+        /* Main content */
+        .main-content {
+            max-width: 760px;
+            padding: 0 40px;
+        }
 
-p {
-    font-size: 17px;
-    margin-bottom: 18px;
-}
+        section {
+            margin-bottom: 60px;
+        }
 
-.underline {
-    border-bottom: 1px solid #000;
-    padding-bottom: 1px;
-}
+        h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 22px;
+            display: inline-block;
+            padding-bottom: 4px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 Q 25 3, 50 5 T 100 6 T 150 5 T 200 6 T 250 5 T 300 6 T 350 5 T 400 6' stroke='black' stroke-width='1.5' fill='none' opacity='0.6'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: 0 100%;
+            background-size: auto 8px;
+        }
 
-/* Education */
-.education-item {
-    margin-bottom: 28px;
-}
+        p {
+            margin-bottom: 18px;
+        }
 
-.degree {
-    font-weight: 600;
-}
+        .underline {
+            border-bottom: 1px solid #000;
+            padding-bottom: 1px;
+        }
 
-.institution {
-    color: #666;
-    font-size: 16px;
-}
+        /* Education */
+        .education-item {
+            margin-bottom: 26px;
+        }
 
-/* Study link */
-.study-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 16px;
-    text-decoration: underline;
-    color: #000;
-}
+        .degree {
+            font-weight: 700;
+        }
 
-/* Responsive */
-@media (max-width: 900px) {
-    nav ul {
-        padding: 0 30px;
-    }
+        .institution {
+            color: #666;
+            font-size: 16px;
+        }
 
-    .container {
-        grid-template-columns: 1fr;
-    }
+        /* Link */
+        .study-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #000;
+            text-decoration: underline;
+            font-size: 16px;
+        }
 
-    .sidebar {
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid #eee;
-    }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
 
-    .main-content {
-        padding: 40px 30px 0;
-    }
-}
+            .sidebar {
+                padding-bottom: 20px;
+            }
+
+            .main-content {
+                padding: 0 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#" class="active">About</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">CV</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <aside class="sidebar">
+        <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="profile-photo">
+        <h1>Yeeun Hong</h1>
+        <p class="title">Ph.D. Candidate<br>University at Albany (SUNY)</p>
+    </aside>
+
+    <main class="main-content">
+        <section>
+            <h2>About</h2>
+            <p>
+                I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in
+                <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>.
+                My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.
+            </p>
+            <p>
+                Through 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders across New York City and Seattle,
+                <span class="underline">my dissertation examines how Asian migrants navigate intimate relationships</span>
+                when marriage represents both genuine partnership and legal security.
+            </p>
+            <a href="Flyer.pdf" target="_blank" class="study-link">Participate in my study</a>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <p class="degree">Ph.D., Sociology (In Progress)</p>
+                <p class="institution">University at Albany (SUNY)</p>
+            </div>
+
+            <div class="education-item">
+                <p class="degree">M.A., Asian Studies (2021)</p>
+                <p class="institution">University of Hawaiʻi at Mānoa</p>
+            </div>
+
+            <div class="education-item">
+                <p class="degree">B.A., Sociology and Criminal Justice (2018)</p>
+                <p class="institution">Gonzaga University</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
