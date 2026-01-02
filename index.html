@@ -90,14 +90,13 @@
 
         /* Sidebar */
         .sidebar {
-            padding: 40px 30px;
+            padding: 0;
             text-align: center;
             font-family: 'Muli', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
         }
 
         .profile-photo {
@@ -105,7 +104,7 @@
             max-width: 310px;
             aspect-ratio: 5 / 7;
             object-fit: cover;
-            margin-bottom: 26px;
+            margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
         }
@@ -117,6 +116,15 @@
             aspect-ratio: 5 / 7;
             object-fit: cover;
             margin: 30px 0;
+        }
+
+        .mobile-photo {
+            display: none;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
         }
 
         /* Main content */
@@ -223,9 +231,67 @@
             text-decoration: none;
             word-break: break-word;
             font-family: 'Muli', sans-serif;
+            font-size: 14px;
         }
 
         .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            font-family: 'Muli', sans-serif;
+        }
+
+        .social-btn:hover {
+            background-color: #000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .connect-label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Muli', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .connect-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .connect-link {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: 'Muli', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .connect-link:hover {
+            color: #666;
             text-decoration: underline;
         }
 
@@ -241,30 +307,55 @@
                 font-weight: 600;
             }
 
-            .content-photo {
-                display: block;
-            }
-
             .sidebar {
                 display: none;
             }
 
             .container {
                 grid-template-columns: 1fr;
-                padding: 0 20px;
+                padding: 0;
                 gap: 0;
+                align-items: stretch;
             }
 
             .main-content {
-                padding: 0;
+                padding: 40px 25px;
                 max-width: 100%;
+                text-align: center;
+            }
+
+            .title-section {
+                display: none;
+            }
+
+            .mobile-photo {
+                display: block;
+            }
+
+            section {
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+
+            .contact-info {
+                margin-top: 30px;
+                padding-top: 30px;
+                border-top: 1px solid #e0e0e0;
+            }
+
+            .connect-links {
+                justify-content: center;
             }
         }
 
         @media (max-width: 600px) {
             nav {
                 padding: 20px 0;
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
 
             nav .logo-link {
@@ -290,25 +381,56 @@
                 margin-left: 0;
                 width: 100%;
                 margin-top: 10px;
+                font-size: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
             }
 
             .container {
-                padding: 0 15px;
+                padding: 0;
                 gap: 0;
             }
 
             .main-content {
-                padding: 0;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .title-section {
+                margin-bottom: 25px;
+            }
+
+            .main-content h1 {
+                font-size: 28px;
+            }
+
+            .brush-underline {
+                width: 180px;
+                margin: 0 auto;
+            }
+
+            section {
+                margin-bottom: 25px;
             }
 
             p {
-                font-size: 18px;
-                line-height: 1.8;
+                font-size: 16px;
+                line-height: 1.7;
             }
 
-            .content-photo {
-                margin: 25px 0;
-                max-width: 280px;
+            .contact-info {
+                margin-top: 25px;
+                padding-top: 25px;
+            }
+
+            .contact-label {
+                font-size: 13px;
+            }
+
+            .connect-link {
+                font-size: 13px;
             }
         }
     </style>
@@ -323,7 +445,6 @@
             <a href="#">About</a>
             <a href="#">Research</a>
             <a href="#">CV</a>
-            <a href="#">Contact</a>
         </li>
     </ul>
 </nav>
@@ -340,17 +461,13 @@
                 <path d="M 0 25 Q 100 10, 200 20 T 400 18" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
+
+        <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="mobile-photo">
+
         <section>
             <p>
                 I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in
                 <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>.
-            </p>
-        </section>
-
-        <img src="https://hongciology.github.io/profile.jpg" alt="Yeeun Hong" class="content-photo">
-
-        <section>
-            <p>
                 My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.
             </p>
         </section>
@@ -359,6 +476,15 @@
             <div class="contact-item">
                 <span class="contact-label">Email:</span><br>
                 <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
+            </div>
+            <div>
+                <span class="connect-label">Connect</span>
+                <div class="connect-links">
+                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4?ev=hdr_xprf" target="_blank" class="connect-link">ResearchGate</a>
+                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
+                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
+                    <a href="https://x.com/hongciology" target="_blank" class="connect-link">X</a>
+                </div>
             </div>
         </div>
     </main>
