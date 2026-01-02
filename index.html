@@ -6,7 +6,7 @@
     <title>Yeeun Hong</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Youngest+Serif&family=Eastman+Pack&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
             background: #ffffff;
             color: #000;
             line-height: 1.7;
@@ -41,7 +41,7 @@
         }
 
         nav .logo {
-            font-family: 'Fjalla One', sans-serif;
+            font-family: 'Youngest Serif', serif;
             font-size: 18px;
             font-weight: 400;
             color: #000;
@@ -50,7 +50,7 @@
         nav .logo-link {
             color: #000;
             text-decoration: none;
-            font-family: 'Fjalla One', sans-serif;
+            font-family: 'Youngest Serif', serif;
             font-size: 18px;
             font-weight: 400;
         }
@@ -70,7 +70,7 @@
             color: #666;
             font-size: 14px;
             letter-spacing: 0.03em;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         nav a:hover {
@@ -90,7 +90,7 @@
         .sidebar {
             padding: 40px 30px;
             text-align: center;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .profile-photo {
@@ -99,13 +99,15 @@
             aspect-ratio: 5 / 7;
             object-fit: cover;
             margin-bottom: 26px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
         }
 
         /* Main content */
         .main-content {
             max-width: 760px;
             padding: 0 40px;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .title-section {
@@ -113,10 +115,44 @@
         }
 
         .main-content h1 {
-            font-family: 'Fjalla One', sans-serif;
+            font-family: 'Youngest Serif', serif;
             font-size: 52px;
             font-weight: 400;
-            margin-bottom: 8px;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .brush-underline {
+            display: block;
+            width: 280px;
+            height: 25px;
+            margin-top: -8px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUnderline 0.8s ease-in 0.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 0.7;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUnderline {
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+            to {
+                opacity: 0.7;
+                transform: scaleX(1);
+            }
         }
 
         .brushstroke {
@@ -129,12 +165,12 @@
 
         section {
             margin-bottom: 60px;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         p {
             margin-bottom: 18px;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .underline {
@@ -147,26 +183,26 @@
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid #e0e0e0;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .contact-item {
             margin-bottom: 12px;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .contact-label {
             font-weight: 700;
             font-size: 14px;
             color: #666;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .contact-link {
             color: #000;
             text-decoration: none;
             word-break: break-word;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Eastman Pack', sans-serif;
         }
 
         .contact-link:hover {
@@ -226,7 +262,9 @@
     <main class="main-content">
         <div class="title-section">
             <h1>Yeeun Hong</h1>
-            <img src="underline.png" alt="underline" class="brushstroke">
+            <svg class="brush-underline" viewBox="0 0 400 40" preserveAspectRatio="none">
+                <path d="M 0 25 Q 100 10, 200 20 T 400 18" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
         <section>
             <p>
