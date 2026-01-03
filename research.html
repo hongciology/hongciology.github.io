@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Yeeun Hong</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-weight: 300;
+            font-family: 'Open Sans', sans-serif;
+            background: #ffffff;
+            color: #000;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 28px 0;
+            margin-bottom: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        nav .logo {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        nav .logo-link {
+            color: #000;
+            text-decoration: none;
+            font-family: 'League Spartan', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        nav .logo-link:hover {
+            color: #000;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 40px 80px 40px;
+        }
+
+        .title-section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .title-section {
+            margin-bottom: 0px;
+        }
+
+        h3 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .brush-underline {
+            display: none;
+        }
+
+        @keyframes fadeInUnderline {
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+            to {
+                opacity: 0.7;
+                transform: scaleX(1);
+            }
+        }
+
+        section {
+            margin-bottom: 30px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #666;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-link {
+            color: #000;
+            text-decoration: none;
+            word-break: break-word;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .connect-label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Open Sans', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .connect-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .connect-link {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .connect-link:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 0 20px;
+            }
+
+            nav .logo-link {
+                font-size: 32px;
+                font-weight: 600;
+            }
+
+            nav .logo {
+                font-size: 32px;
+                font-weight: 600;
+            }
+
+            nav .nav-links {
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 10px;
+            }
+
+            .container {
+                padding: 0 20px 80px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .brush-underline {
+                width: 200px;
+            }
+
+            section {
+                margin-bottom: 25px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 20px 0;
+                margin-bottom: 30px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 0 15px;
+            }
+
+            nav .logo-link {
+                font-size: 28px;
+                font-weight: 600;
+            }
+
+            nav .logo {
+                font-size: 28px;
+                font-weight: 600;
+            }
+
+            nav .nav-links {
+                flex-direction: row;
+                gap: 15px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 0 15px 80px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .brush-underline {
+                width: 180px;
+            }
+
+            section {
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li class="logo"><a href="index.html" class="logo-link"><strong>YEEUN HONG</strong></a></li>
+        <li class="nav-links">
+            <a href="index.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="cv.html">CV</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="title-section">
+        <h1>Research</h1>
+        <svg class="brush-underline" viewBox="0 0 400 40" preserveAspectRatio="none">
+            <path d="M 0 25 Q 100 10, 200 20 T 400 18" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <section>
+        <h3>Research Interests</h3>
+        <p>Im/migration; Race and Ethnicity; Gender and Family; Asian and Asian American Studies; Qualitative Methods</p>
+    </section>
+
+    <section>
+        <h3>Dissertation</h3>
+        <p><strong>"Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships"</strong></p>
+        <p>This dissertation examines how U.S. immigration policies shape Asian migrants' intimate relationships and family formation processes. Drawing on 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders, this study looks at how marriage functions simultaneously as a personal commitment and a pathway to legalization across different social locations, revealing how structural power operates within intimate aspects of everyday life. Comparing two sanctuary cities—New York City and Seattle—with contrasting enforcement realities, the dissertation shows how local implementation of federal policies produces starkly different everyday experiences across divergent local contexts, offering insights relevant to understanding large-scale policy implementation more broadly.</p>
+    </section>
+
+    <section>
+        <h3>Publications</h3>
+        <p>Lee, Eunju, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng. "Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study." <em>Children and Youth Services Review</em>, vol. 172 (May 2025): 108276. <a href="https://doi.org/10.1016/j.childyouth.2025.108276" target="_blank">https://doi.org/10.1016/j.childyouth.2025.108276</a>.</p>
+    </section>
+
+    <section>
+        <h3>Work in Progress</h3>
+        <p>Dreby, Joanna and <strong>Yeeun Hong</strong>. "But We Don't Talk About It": Silencing and Legal Precarity Among First- and Second-Generation Asian Immigrants. <em>Under review at Social Problems</em>.</p>
+        <p><strong>Yeeun Hong</strong>. Double Precarity: The Intersecting Vulnerabilities of LGBTQ+ Asian Immigrants. <em>Manuscript in Preparation</em>.</p>
+        <p><strong>Yeeun Hong</strong>, Jane Jia-Yin Wang, and Angie Y. Chung. Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the United States, China, and South Korea. <em>Manuscript in Preparation</em>.</p>
+        <p><strong>Yeeun Hong</strong>, Katelyn HJ Kim, and Paul Y. Chang. Assimilation Disrupted? How Migrant Wives in South Korea Negotiate Assimilation through Transnational Ties. <em>Manuscript in Preparation</em>.</p>
+    </section>
+
+    <section>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">Contact</span><br>
+                <a href="#" class="contact-link">yhong4@albany.edu</a>
+            </div>
+            <div>
+                <span class="connect-label">Connect</span>
+                <div class="connect-links">
+                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4?ev=hdr_xprf" target="_blank" class="connect-link">ResearchGate</a>
+                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
+                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
+             
