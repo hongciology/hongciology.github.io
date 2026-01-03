@@ -6,7 +6,7 @@
     <title>Yeeun Hong</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -17,6 +17,7 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
             background: #ffffff;
             color: #000;
             line-height: 1.7;
@@ -41,7 +42,7 @@
         }
 
         nav .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'League Spartan', sans-serif;
             font-size: 18px;
             font-weight: 400;
             color: #000;
@@ -50,7 +51,7 @@
         nav .logo-link {
             color: #000;
             text-decoration: none;
-            font-family: 'Playfair Display', serif;
+            font-family: 'League Spartan', sans-serif;
             font-size: 18px;
             font-weight: 400;
         }
@@ -70,7 +71,7 @@
             color: #666;
             font-size: 14px;
             letter-spacing: 0.03em;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         nav a:hover {
@@ -80,7 +81,7 @@
         /* Layout */
         .container {
             display: grid;
-            grid-template-columns: 420px 1fr;
+            grid-template-columns: 450px 1fr;
             max-width: 1200px;
             margin: 0 auto;
             padding-bottom: 80px;
@@ -92,7 +93,7 @@
         .sidebar {
             padding: 0;
             text-align: center;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -101,7 +102,7 @@
 
         .profile-photo {
             width: 100%;
-            max-width: 310px;
+            max-width: 380px;
             aspect-ratio: 5 / 7;
             object-fit: cover;
             margin: 0;
@@ -120,8 +121,8 @@
 
         .mobile-photo {
             display: none;
-            width: 180px;
-            height: 180px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 30px;
@@ -131,7 +132,7 @@
         .main-content {
             max-width: 760px;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -139,25 +140,19 @@
         }
 
         .title-section {
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
 
         .main-content h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'League Spartan', sans-serif;
             font-size: 42px;
             font-weight: 400;
-            margin-bottom: 0;
+            margin-bottom: 30px;
             position: relative;
         }
 
         .brush-underline {
-            display: block;
-            width: 250px;
-            height: 25px;
-            margin-top: -8px;
-            margin-bottom: 30px;
-            opacity: 0;
-            animation: fadeInUnderline 0.8s ease-in 0.2s forwards;
+            display: none;
         }
 
         @keyframes fadeIn {
@@ -193,12 +188,12 @@
 
         section {
             margin-bottom: 20px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         p {
             margin-bottom: 10px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         .underline {
@@ -211,26 +206,26 @@
             margin-top: 15px;
             padding-top: 15px;
             border-top: 1px solid #e0e0e0;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         .contact-item {
             margin-bottom: 12px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         .contact-label {
             font-weight: 700;
             font-size: 14px;
             color: #666;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         .contact-link {
             color: #000;
             text-decoration: none;
             word-break: break-word;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
             font-size: 14px;
         }
 
@@ -258,7 +253,7 @@
             color: #000;
             font-size: 18px;
             transition: all 0.3s ease;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
         }
 
         .social-btn:hover {
@@ -271,7 +266,7 @@
             font-weight: 700;
             font-size: 14px;
             color: #666;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
             display: block;
             margin-bottom: 10px;
         }
@@ -286,7 +281,7 @@
             color: #000;
             text-decoration: none;
             font-size: 14px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif; font-weight: 300;
             transition: color 0.3s ease;
         }
 
@@ -440,11 +435,11 @@
 
 <nav>
     <ul>
-        <li class="logo"><a href="index.html" class="logo-link">Yeeun Hong</a></li>
+        <li class="logo"><a href="index.html" class="logo-link"><strong>YEEUN HONG</strong></a></li>
         <li class="nav-links">
-            <a href="#">About</a>
-            <a href="#">Research</a>
-            <a href="#">CV</a>
+            <a href="index.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="cv.html">CV</a>
         </li>
     </ul>
 </nav>
@@ -456,7 +451,7 @@
 
     <main class="main-content">
         <div class="title-section">
-            <h1>Yeeun Hong</h1>
+            <h1>YEEUN HONG</h1>
             <svg class="brush-underline" viewBox="0 0 400 40" preserveAspectRatio="none">
                 <path d="M 0 25 Q 100 10, 200 20 T 400 18" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -466,16 +461,17 @@
 
         <section>
             <p>
-                I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in
-                <span class="underline">immigration, race and ethnicity, gender and family, and Asian and Asian American Studies</span>.
-                My research examines how immigration policies shape the intimate lives and family formations of Asian migrants in the United States.
+                I am a Ph.D. candidate in Sociology at the University at Albany (SUNY), specializing in immigration, race and ethnicity, gender and family, and Asian and Asian American Studies.
+            </p>
+            <p>
+                My research examines how immigration policies constrain or enable family formation and intimate relationship-building processes for Asian migrants in the United States.
             </p>
         </section>
 
         <div class="contact-info">
             <div class="contact-item">
-                <span class="contact-label">Email:</span><br>
-                <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
+                <span class="contact-label">Contact</span><br>
+                <a href="#" class="contact-link">yhong4@albany.edu</a>
             </div>
             <div>
                 <span class="connect-label">Connect</span>
@@ -484,11 +480,3 @@
                     <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
                     <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
                     <a href="https://x.com/hongciology" target="_blank" class="connect-link">X</a>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
-
-</body>
-</html>
