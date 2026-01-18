@@ -101,6 +101,42 @@
             display: none;
         }
 
+        @keyframes fadeInUnderline {
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+            to {
+                opacity: 0.7;
+                transform: scaleX(1);
+            }
+        }
+
+        section {
+            margin-bottom: 30px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .underline {
+            border-bottom: 1px solid #000;
+            padding-bottom: 1px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #666;
+        }
+
         .download-btn {
             display: inline-block;
             padding: 12px 28px;
@@ -114,13 +150,13 @@
             font-weight: 400;
             transition: all 0.3s;
             cursor: pointer;
-            margin-bottom: 30px;
         }
 
         .download-btn:hover {
             background: #333;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            color: #fff;
         }
 
         .pdf-viewer-container {
@@ -129,7 +165,6 @@
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 40px;
         }
 
         .pdf-embed {
@@ -252,13 +287,17 @@
                 width: 200px;
             }
 
-            .pdf-embed {
-                height: 900px;
+            section {
+                margin-bottom: 25px;
             }
 
             p {
                 font-size: 16px;
                 line-height: 1.6;
+            }
+
+            .pdf-embed {
+                height: 900px;
             }
         }
 
@@ -308,13 +347,12 @@
                 width: 180px;
             }
 
-            .download-btn {
-                padding: 10px 24px;
-                font-size: 13px;
+            section {
+                margin-bottom: 20px;
             }
 
-            .pdf-viewer-container {
-                border-radius: 6px;
+            p {
+                font-size: 15px;
             }
 
             .pdf-embed {
@@ -327,10 +365,6 @@
 
             .fallback-message p {
                 font-size: 14px;
-            }
-
-            p {
-                font-size: 15px;
             }
         }
     </style>
@@ -357,35 +391,43 @@
         </svg>
     </div>
 
-    <a href="https://hongciology.github.io/YGHCV.pdf" class="download-btn" download target="_blank">Download PDF</a>
-
-    <div class="pdf-viewer-container">
-        <embed 
-            src="https://hongciology.github.io/YGHCV.pdf#toolbar=0&navpanes=0&scrollbar=1" 
-            type="application/pdf" 
-            class="pdf-embed"
-        />
-        <div class="fallback-message">
-            <p>Unable to display PDF. Please download it to view.</p>
+    <section>
+        <p>
             <a href="https://hongciology.github.io/YGHCV.pdf" class="download-btn" download target="_blank">Download PDF</a>
-        </div>
-    </div>
+        </p>
+    </section>
 
-    <div class="contact-info">
-        <div class="contact-item">
-            <span class="contact-label">Contact</span><br>
-            <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
-        </div>
-        <div>
-            <span class="connect-label">Connect</span>
-            <div class="connect-links">
-                <a href="https://www.researchgate.net/profile/Yeeun-Hong-4?ev=hdr_xprf" target="_blank" class="connect-link">ResearchGate</a>
-                <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
-                <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
-                <a href="https://x.com/hongciology" target="_blank" class="connect-link">X</a>
+    <section>
+        <div class="pdf-viewer-container">
+            <embed 
+                src="https://hongciology.github.io/YGHCV.pdf#toolbar=0&navpanes=0&scrollbar=1" 
+                type="application/pdf" 
+                class="pdf-embed"
+            />
+            <div class="fallback-message">
+                <p>Unable to display PDF. Please download it to view.</p>
+                <a href="https://hongciology.github.io/YGHCV.pdf" class="download-btn" download target="_blank">Download PDF</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">Contact</span><br>
+                <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
+            </div>
+            <div>
+                <span class="connect-label">Connect</span>
+                <div class="connect-links">
+                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4?ev=hdr_xprf" target="_blank" class="connect-link">ResearchGate</a>
+                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
+                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
+                    <a href="https://x.com/hongciology" target="_blank" class="connect-link">X</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <script>
