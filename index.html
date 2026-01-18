@@ -98,23 +98,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-width: 400px;
+            max-width: 400px;
         }
 
         .profile-photo {
-            width: 100%;
-            max-width: 100%;
+            width: auto;
             height: auto;
+            max-width: none;
             display: block;
             margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            will-change: transform;
+            object-fit: none;
+            object-position: center;
         }
 
         .content-photo {
@@ -134,12 +131,6 @@
             object-fit: cover;
             object-position: center 20%;
             margin: 0 auto 30px;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
         }
 
         /* Main content */
@@ -300,15 +291,6 @@
         .connect-link:hover {
             color: #666;
             text-decoration: underline;
-        }
-
-        /* High DPI Display Support */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .profile-photo,
-            .mobile-photo {
-                image-rendering: auto;
-                image-rendering: -webkit-optimize-contrast;
-            }
         }
 
         /* Responsive */
