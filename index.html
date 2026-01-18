@@ -104,12 +104,16 @@
             width: 100%;
             max-width: 480px;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
             margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
             /* SMOOTH rendering - no pixelation */
-            image-rendering: auto;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: bicubic;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .content-photo {
@@ -130,7 +134,10 @@
             object-position: center 20%;
             margin: 0 auto 30px;
             /* SMOOTH rendering - no pixelation */
-            image-rendering: auto;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         /* Main content */
