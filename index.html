@@ -81,7 +81,7 @@
         /* Layout */
         .container {
             display: grid;
-            grid-template-columns: 450px 1fr;
+            grid-template-columns: 550px 1fr;
             max-width: 1200px;
             margin: 0 auto;
             padding-bottom: 80px;
@@ -102,19 +102,15 @@
 
         .profile-photo {
             width: 100%;
-            max-width: 380px;
+            max-width: 480px;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
             margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
-            /* Improved image rendering */
             image-rendering: auto;
-            image-rendering: -webkit-optimize-contrast;
-            -webkit-backface-visibility: hidden;
-            -webkit-transform: translateZ(0);
-            backface-visibility: hidden;
-            transform: translateZ(0);
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
 
         .content-photo {
@@ -128,16 +124,15 @@
 
         .mobile-photo {
             display: none;
-            width: 240px;
-            height: 240px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
             margin: 0 auto 30px;
-            /* Improved image rendering for mobile */
             image-rendering: auto;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
 
         /* Main content */
