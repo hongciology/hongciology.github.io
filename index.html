@@ -98,7 +98,7 @@
         .mobile-photo {
             display: none;
             width: 280px;
-            height: auto;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 30px;
@@ -187,6 +187,10 @@
                 text-align: center;
             }
 
+            .main-content h1 {
+                display: none;
+            }
+
             .mobile-photo {
                 display: block;
             }
@@ -223,8 +227,8 @@
 <div class="container">
     <aside class="sidebar">
         <img
-            src="profile-800.jpg"
-            srcset="profile-800.jpg 1x, profile.jpg 2x"
+            src="/profile-800.jpg"
+            srcset="/profile-800.jpg 1x, /profile.jpg 2x"
             alt="Yeeun Hong"
             class="profile-photo"
             width="400"
@@ -234,8 +238,8 @@
 
     <main class="main-content">
         <img
-            src="profile-800.jpg"
-            srcset="profile-800.jpg 1x, profile.jpg 2x"
+            src="/profile-800.jpg"
+            srcset="/profile-800.jpg 1x, /profile.jpg 2x"
             alt="Yeeun Hong"
             class="mobile-photo"
             width="280"
