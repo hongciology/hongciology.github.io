@@ -81,11 +81,11 @@
         /* Layout */
         .container {
             display: grid;
-            grid-template-columns: 550px 1fr;
-            max-width: 1200px;
+            grid-template-columns: 600px 1fr;
+            max-width: 1400px;
             margin: 0 auto;
             padding-bottom: 80px;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
@@ -102,15 +102,15 @@
 
         .profile-photo {
             width: 100%;
-            max-width: 480px;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
-            /* SMOOTH rendering - no pixelation */
+            /* SMOOTH high-quality rendering */
+            image-rendering: high-quality;
             image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
             -ms-interpolation-mode: bicubic;
             backface-visibility: hidden;
             transform: translateZ(0);
@@ -133,9 +133,10 @@
             object-fit: cover;
             object-position: center 20%;
             margin: 0 auto 30px;
-            /* SMOOTH rendering - no pixelation */
+            /* SMOOTH high-quality rendering */
+            image-rendering: high-quality;
             image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            -ms-interpolation-mode: bicubic;
             backface-visibility: hidden;
             transform: translateZ(0);
         }
