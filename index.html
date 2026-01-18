@@ -101,13 +101,14 @@
         }
 
         .profile-photo {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
+            width: 400px;
+            height: 500px;
             display: block;
             margin: 0;
             opacity: 0;
             animation: fadeIn 0.8s ease-in forwards;
+            object-fit: cover;
+            object-position: center;
         }
 
         .content-photo {
@@ -449,7 +450,10 @@
 
 <div class="container">
     <aside class="sidebar">
-        <img src="profile.jpg" alt="Yeeun Hong" class="profile-photo">
+        <picture>
+            <source srcset="profile.jpg" type="image/jpeg">
+            <img src="profile.jpg" alt="Yeeun Hong" class="profile-photo" width="400" height="500">
+        </picture>
     </aside>
 
     <main class="main-content">
@@ -460,7 +464,10 @@
             </svg>
         </div>
 
-        <img src="profile.jpg" alt="Yeeun Hong" class="mobile-photo">
+        <picture>
+            <source srcset="profile.jpg" type="image/jpeg">
+            <img src="profile.jpg" alt="Yeeun Hong" class="mobile-photo" width="280" height="280">
+        </picture>
 
         <section>
             <p>
