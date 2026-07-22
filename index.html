@@ -1,287 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeeun Hong</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeeun Hong</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+    :root {
+        --bg:   #ffffff;
+        --ink:  #191919;
+        --grey: #6c6c6c;
+        --line: #e5e5e5;
+        --serif: 'EB Garamond', Georgia, serif;
+        --sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+        background: var(--bg); color: var(--ink);
+        font-family: var(--serif); font-weight: 400;
+        font-size: 20px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+        min-height: 100vh; display: flex; flex-direction: column;
+    }
+    a { color: inherit; }
+
+    /* ---- top bar: wordmark + tabs ---- */
+    .topbar { border-bottom: 1px solid var(--line); }
+    .topbar .inner {
+        max-width: 1500px; margin: 0 auto; padding: 22px 40px;
+        display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    }
+    .wordmark {
+        font-family: var(--sans);
+        font-size: 15px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+        color: var(--ink); text-decoration: none;
+    }
+    .nav { display: flex; gap: 32px; }
+    .nav a {
+        font-family: var(--sans);
+        font-size: 13px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
+        color: var(--grey); text-decoration: none; transition: color .18s ease;
+    }
+    .nav a:hover, .nav a:focus-visible { color: var(--ink); }
+
+    /* ---- main centered block ---- */
+    main { flex: 1; display: flex; align-items: center; }
+    .layout {
+        max-width: 1500px; margin: 0 auto; width: 100%;
+        padding: 56px 40px;
+        display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center;
+    }
+
+    .photo img { width: 100%; height: auto; display: block; }
+
+    .statement {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(1.8rem, 2.7vw, 2.6rem);
+        line-height: 1.32;
+        margin-bottom: 30px;
+        text-wrap: balance;
+    }
+    .statement em { font-style: italic; }
+
+    .bio {
+        font-size: 20px;
+        max-width: 72ch;
+        margin-bottom: 40px;
+    }
+
+    .contact { padding-top: 32px; border-top: 1px solid var(--line); }
+    .contact .label {
+        display: block; font-family: var(--sans);
+        font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+        text-transform: uppercase; color: var(--grey); margin-bottom: 14px;
+    }
+    .contact .label.more { margin-top: 30px; }
+    .contact .email { font-size: 16px; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+    .contact .email:hover, .contact .email:focus-visible { border-color: var(--ink); }
+    .links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 20px; }
+    .links a { font-size: 16px; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: border-color .18s ease; }
+    .links a:hover, .links a:focus-visible { border-color: var(--ink); }
+
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+    @media (max-width: 820px) {
+        .topbar .inner { padding: 18px 26px; }
+        .nav { gap: 22px; }
+        .layout {
+            grid-template-columns: 1fr; gap: 32px; padding: 44px 26px 60px;
         }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
-            background: #ffffff;
-            color: #000;
-            line-height: 1.6;
-            font-size: 17px;
-        }
-
-        /* Navigation */
-        nav {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 28px 0;
-            margin-bottom: 50px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        nav .logo-link {
-            font-family: 'League Spartan', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #000;
-            text-decoration: none;
-        }
-
-        nav .nav-links {
-            display: flex;
-            gap: 45px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            font-size: 14px;
-            letter-spacing: 0.03em;
-        }
-
-        nav a:hover {
-            color: #000;
-        }
-
-        /* Layout */
-        .container {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 60px;
-            align-items: center;
-            padding-bottom: 80px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-photo {
-            width: 400px;
-            height: auto;
-            max-height: 500px;
-            display: block;
-            object-fit: contain;
-            image-rendering: auto;
-            transform: translateZ(0);
-            opacity: 0;
-            animation: fadeIn 0.8s ease-in forwards;
-        }
-
-        .mobile-photo {
-            display: none;
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center 30%;
-            margin: 0 auto 40px;
-        }
-
-        /* Main content */
-        .main-content {
-            max-width: 760px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .main-content h1 {
-            font-family: 'League Spartan', sans-serif;
-            font-size: 42px;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        /* Contact */
-        .contact-info {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .contact-label {
-            font-weight: 700;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .contact-link {
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-
-        .connect-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .connect-link {
-            font-size: 14px;
-            color: #000;
-            text-decoration: none;
-        }
-
-        .connect-link:hover {
-            color: #666;
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .sidebar {
-                display: none;
-            }
-
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .main-content {
-                padding: 0px 25px 80px;
-                text-align: center;
-            }
-
-            .main-content h1 {
-                display: none;
-            }
-
-            .mobile-photo {
-                display: block;
-            }
-
-            .contact-info {
-                text-align: center;
-            }
-
-            .connect-links {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                padding: 0 15px;
-            }
-
-            .main-content h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
+        .photo { max-width: 250px; }
+    }
+</style>
 </head>
 
 <body>
 
-<nav>
-    <ul>
-        <li><a href="index.html" class="logo-link"><strong>YEEUN HONG</strong></a></li>
-        <li class="nav-links">
-            <a href="about.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="cv.html">CV</a>
-        </li>
-    </ul>
-</nav>
+    <header class="topbar">
+        <div class="inner">
+            <a href="index.html" class="wordmark">Yeeun Hong</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="cv.html">CV</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="container">
-    <aside class="sidebar">
-        <img
-            src="profile.jpg"
-            alt="Yeeun Hong"
-            class="profile-photo"
-            width="400"
-            height="500"
-        >
-    </aside>
-
-    <main class="main-content">
-        <img
-            src="profile.jpg"
-            alt="Yeeun Hong"
-            class="mobile-photo"
-            width="280"
-            height="280"
-        >
-
-        <h1>YEEUN HONG</h1>
-
-        <section>
-            <p>
-                I am a Sociology Ph.D. candidate at the University at Albany, specializing in immigration, race and ethnicity, gender and family, and Asian and Asian American Studies.
-            </p>
-            <p>
-                My research examines how immigration policies constrain or enable family formation and intimate relationship-building processes for Asian migrants in the United States.
-            </p>
-        </section>
-
-        <div class="contact-info">
-            <div>
-                <span class="contact-label">Contact</span><br>
-                <a href="mailto:yhong4@albany.edu" class="contact-link">yhong4@albany.edu</a>
+    <main>
+        <div class="layout">
+            <div class="photo">
+                <img src="profile.jpg" alt="Yeeun Hong" width="340" height="425">
             </div>
 
-            <div style="margin-top: 15px;">
-                <span class="contact-label">Connect</span>
-                <div class="connect-links">
-                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" class="connect-link">ResearchGate</a>
-                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" class="connect-link">LinkedIn</a>
-                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" class="connect-link">Bluesky</a>
-                    <a href="https://x.com/hongciology" target="_blank" class="connect-link">X</a>
+            <div class="content">
+                <p class="statement">
+                    I study how <em>intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
+                </p>
+
+                <p class="bio">
+                    I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
+                </p>
+
+                <div class="contact">
+                    <span class="label">Questions?</span>
+                    <a class="email" href="mailto:yhong4@albany.edu">yhong4@albany.edu</a>
+                    <span class="label more">Say hi elsewhere</span>
+                    <div class="links">
+                        <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
+                        <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+                        <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-</div>
 
 </body>
 </html>
