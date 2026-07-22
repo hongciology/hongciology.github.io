@@ -11,62 +11,125 @@
 
 <style>
     :root {
-        --bg:   #ffffff;
-        --ink:  #191919;
+        --bg: #ffffff;
+        --ink: #191919;
         --grey: #6c6c6c;
         --line: #e5e5e5;
+
+        /* Shared width for header and content */
+        --container: 1500px;
+
         --serif: 'EB Garamond', Georgia, serif;
-        --sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
 
     body {
-        background: var(--bg); color: var(--ink);
-        font-family: var(--serif); font-weight: 400;
-        font-size: 20px; line-height: 1.6; -webkit-font-smoothing: antialiased;
-        min-height: 100vh; display: flex; flex-direction: column;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 20px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
-    a { color: inherit; }
 
-    /* ---- top bar: wordmark + tabs ---- */
-    .topbar { border-bottom: 1px solid var(--line); }
-    .topbar .inner {
-        max-width: 1500px; margin: 0 auto; padding: 22px 40px;
-        display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    a {
+        color: inherit;
     }
+
+    /* ---------- Header ---------- */
+
+    .topbar {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .topbar .inner {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 22px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+
     .wordmark {
         font-family: var(--sans);
-        font-size: 15px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
-        color: var(--ink); text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        text-decoration: none;
     }
-    .nav { display: flex; gap: 32px; }
+
+    .nav {
+        display: flex;
+        gap: 32px;
+    }
+
     .nav a {
         font-family: var(--sans);
-        font-size: 13px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
-        color: var(--grey); text-decoration: none; transition: color .18s ease;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        color: var(--grey);
+        text-decoration: none;
+        transition: color .18s ease;
     }
-    .nav a:hover, .nav a:focus-visible { color: var(--ink); }
 
-    /* ---- main centered block ---- */
-    main { flex: 1; display: flex; align-items: center; }
+    .nav a:hover,
+    .nav a:focus-visible {
+        color: var(--ink);
+    }
+
+    /* ---------- Main ---------- */
+
+    main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
     .layout {
-        max-width: 1620px; margin: 0 auto; width: 100%;
+        max-width: var(--container);
+        width: 100%;
+        margin: 0 auto;
         padding: 56px 40px;
-        display: grid; grid-template-columns: 460px 1fr; gap: 72px; align-items: center;
+        display: grid;
+        grid-template-columns: 460px 1fr;
+        gap: 72px;
+        align-items: center;
     }
 
-    .photo img { width: 100%; height: auto; display: block; }
+    .photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
     .statement {
-        font-family: var(--serif);
-        font-weight: 400;
         font-size: clamp(1.8rem, 2.7vw, 2.6rem);
         line-height: 1.32;
         margin-bottom: 30px;
         text-wrap: balance;
     }
-    .statement em { font-style: italic; }
+
+    .statement em {
+        font-style: italic;
+    }
 
     .bio {
         font-size: 20px;
@@ -74,73 +137,160 @@
         margin-bottom: 40px;
     }
 
-    .contact { padding-top: 32px; border-top: 1px solid var(--line); }
-    .contact .label {
-        display: block; font-family: var(--sans);
-        font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
-        text-transform: uppercase; color: var(--grey); margin-bottom: 14px;
+    .contact {
+        padding-top: 32px;
+        border-top: 1px solid var(--line);
     }
-    .contact .label.more { margin-top: 30px; }
-    .contact .email { font-size: 16px; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
-    .contact .email:hover, .contact .email:focus-visible { border-color: var(--ink); }
-    .links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 20px; }
-    .links a { font-size: 16px; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: border-color .18s ease; }
-    .links a:hover, .links a:focus-visible { border-color: var(--ink); }
 
-    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .label {
+        display: block;
+        font-family: var(--sans);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin-bottom: 14px;
+    }
+
+    .label.more {
+        margin-top: 30px;
+    }
+
+    .email {
+        font-size: 16px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 2px;
+    }
+
+    .email:hover,
+    .email:focus-visible {
+        border-color: var(--ink);
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        margin-top: 20px;
+    }
+
+    .links a {
+        font-size: 16px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1px;
+        transition: border-color .18s ease;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+        border-color: var(--ink);
+    }
+
+    a:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+    }
+
+    /* ---------- Mobile ---------- */
 
     @media (max-width: 820px) {
-        .topbar .inner { padding: 18px 26px; }
-        .nav { gap: 22px; }
-        .layout {
-            grid-template-columns: 1fr; gap: 32px; padding: 44px 26px 60px;
+
+        .topbar .inner {
+            padding: 18px 26px;
         }
-        .photo { max-width: 320px; }
+
+        .nav {
+            gap: 22px;
+        }
+
+        main {
+            align-items: flex-start;
+        }
+
+        .layout {
+            grid-template-columns: 1fr;
+            gap: 34px;
+            padding: 44px 26px 60px;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .photo {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .photo img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .content {
+            max-width: 34rem;
+        }
+
+        .bio {
+            max-width: none;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .links {
+            justify-content: center;
+        }
     }
+
 </style>
 </head>
 
 <body>
 
-    <header class="topbar">
-        <div class="inner">
-            <a href="index.html" class="wordmark">Yeeun Hong</a>
-            <nav class="nav" aria-label="Primary">
-                <a href="research.html">Research</a>
-                <a href="cv.html">CV</a>
-            </nav>
+<header class="topbar">
+    <div class="inner">
+        <a href="index.html" class="wordmark">Yeeun Hong</a>
+
+        <nav class="nav" aria-label="Primary">
+            <a href="research.html">Research</a>
+            <a href="cv.html">CV</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <div class="layout">
+
+        <div class="photo">
+            <img src="profile.jpg" alt="Yeeun Hong" width="460" height="575">
         </div>
-    </header>
 
-    <main>
-        <div class="layout">
-            <div class="photo">
-                <img src="profile.jpg" alt="Yeeun Hong" width="460" height="575">
-            </div>
+        <div class="content">
 
-            <div class="content">
-                <p class="statement">
-                    I study how <em>intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
-                </p>
+            <p class="statement">
+                I study how <em>intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
+            </p>
 
-                <p class="bio">
-                    I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
-                </p>
+            <p class="bio">
+                I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
+            </p>
 
-                <div class="contact">
-                    <span class="label">Questions?</span>
-                    <a class="email" href="mailto:yhong4@albany.edu">yhong4@albany.edu</a>
-                    <span class="label more">Say hi elsewhere</span>
-                    <div class="links">
-                        <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
-                        <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
-                        <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+            <div class="contact">
 
-</body>
-</html>
+                <span class="label">Questions?</span>
+
+                <a class="email" href="mailto:yhong4@albany.edu">
+                    yhong4@albany.edu
+                </a>
+
+                <span class="label more">Say hi elsewhere</span>
+
+                <div class="links">
+                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
+                    <a href="https://www.linkedin
