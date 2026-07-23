@@ -148,9 +148,12 @@
     }
 
     .highlight {
-        font-style: italic;
         opacity: 0;
         animation: revealHighlight 2.6s ease-in-out .5s forwards;
+    }
+
+    em.highlight {
+        font-style: italic;
     }
 
     @keyframes revealHighlight {
@@ -242,7 +245,7 @@
         .layout {
             flex-direction: column;
             align-items: center;
-            gap: 22px;
+            gap: 30px;
             padding: 60px 26px;
             text-align: center;
         }
@@ -275,13 +278,14 @@
             height: auto;
             aspect-ratio: 1 / 1;
             object-fit: cover;
+            object-position: center 15%;
             display: block;
         }
 
         .content-rest {
             width: 100%;
             max-width: 34rem;
-            margin-top: 16px;
+            margin-top: 28px;
         }
 
         .bio {
@@ -324,13 +328,13 @@
         <div class="content">
 
             <p class="statement">
-                I study how <em class="highlight">intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
+                I study how <em class="highlight">intimate relationship decision-making and family formation</em> <span class="highlight">processes</span> are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
             </p>
 
             <div class="content-rest">
 
                 <p class="bio">
-                    I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
+                    I am a Ph.D. candidate in Sociology at the University at Albany. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
                 </p>
 
                 <div class="contact">
@@ -367,18 +371,28 @@
         if (!photo || !content) return;
 
         if (window.innerWidth > 820) {
-            photo.style.height = content.offsetHeight + 'px';
+            photo.style.height = '';
+            var h = content.offsetHeight;
+            photo.style.height = h + 'px';
         } else {
             photo.style.height = '';
         }
     }
 
+    syncPhotoHeight();
     window.addEventListener('load', syncPhotoHeight);
     window.addEventListener('resize', syncPhotoHeight);
 
     // font loading can change content height after initial paint
     if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(syncPhotoHeight);
+    }
+
+    // catch late layout shifts (images loading, etc.)
+    if (window.ResizeObserver) {
+        var ro = new ResizeObserver(syncPhotoHeight);
+        var contentEl = document.querySelector('.content');
+        if (contentEl) ro.observe(contentEl);
     }
 </script>
 
