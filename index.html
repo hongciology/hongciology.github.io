@@ -108,12 +108,15 @@
         width: 100%;
         margin: 0 auto;
         padding: 48px 40px;
-        display: grid;
-        /* size columns to their content and center the whole group on the page */
-        grid-template-columns: 460px minmax(0, 780px);
+        display: flex;
         justify-content: center;
-        gap: 72px;
         align-items: stretch;
+        gap: 72px;
+    }
+
+    .photo {
+        flex: 0 0 460px;
+        width: 460px;
     }
 
     .photo img {
@@ -124,6 +127,8 @@
     }
 
     .content {
+        flex: 0 1 780px;
+        width: 780px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -223,29 +228,46 @@
         }
 
         .layout {
-            grid-template-columns: 1fr;
-            gap: 34px;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
             padding: 60px 26px;
-            justify-items: center;
             text-align: center;
         }
 
+        /* let statement and content-rest become direct flex items of .layout
+           so they can be reordered independently of the photo */
+        .content {
+            display: contents;
+        }
+
+        .statement {
+            order: 1;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
         .photo {
+            order: 2;
+            flex: none;
             width: 100%;
-            max-width: 300px;
+            max-width: 260px;
             margin: 0 auto;
-            border: 1px solid var(--line);
-            padding: 10px;
+            border-radius: 50%;
+            overflow: hidden;
         }
 
         .photo img {
             width: 100%;
+            height: auto;
             aspect-ratio: 4 / 5;
             object-fit: cover;
             display: block;
         }
 
-        .content {
+        .content-rest {
+            order: 3;
+            width: 100%;
             max-width: 34rem;
         }
 
@@ -292,25 +314,29 @@
                 I study how <em>intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
             </p>
 
-            <p class="bio">
-                I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
-            </p>
+            <div class="content-rest">
 
-            <div class="contact">
+                <p class="bio">
+                    I am a Ph.D. candidate in Sociology. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
+                </p>
 
-                <span class="label">Questions?</span>
+                <div class="contact">
 
-                <a class="email" href="mailto:yhong4@albany.edu">
-                    yhong4@albany.edu
-                </a>
+                    <span class="label">Questions?</span>
 
-                <span class="label more">Say hi elsewhere</span>
+                    <a class="email" href="mailto:yhong4@albany.edu">
+                        yhong4@albany.edu
+                    </a>
 
-                <div class="links">
-                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
-                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
-                    <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
+                    <span class="label more">Say hi elsewhere</span>
+
+                    <div class="links">
+                        <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
+                        <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+                        <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
+                    </div>
+
                 </div>
 
             </div>
