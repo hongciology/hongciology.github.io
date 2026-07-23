@@ -11,48 +11,100 @@
 
 <style>
     :root {
-        --bg:   #ffffff;
-        --ink:  #191919;
+        --bg: #ffffff;
+        --ink: #191919;
         --grey: #6c6c6c;
         --line: #e5e5e5;
+
+        /* Shared width for header and content */
+        --container: 1500px;
+
         --serif: 'EB Garamond', Georgia, serif;
-        --sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
 
     body {
-        background: var(--bg); color: var(--ink);
-        font-family: var(--serif); font-weight: 400;
-        font-size: 20px; line-height: 1.6; -webkit-font-smoothing: antialiased;
-        min-height: 100vh; display: flex; flex-direction: column;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 20px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
-    a { color: inherit; }
 
-    /* ---- top bar: wordmark + tabs ---- */
-    .topbar { border-bottom: 1px solid var(--line); }
-    .topbar .inner {
-        max-width: 1500px; margin: 0 auto; padding: 22px 40px;
-        display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    a {
+        color: inherit;
     }
+
+    /* ---------- Header ---------- */
+
+    .topbar {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .topbar .inner {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 22px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+
     .wordmark {
         font-family: var(--sans);
-        font-size: 15px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
-        color: var(--ink); text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        text-decoration: none;
     }
-    .nav { display: flex; gap: 32px; }
+
+    .nav {
+        display: flex;
+        gap: 32px;
+    }
+
     .nav a {
         font-family: var(--sans);
-        font-size: 13px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
-        color: var(--grey); text-decoration: none; transition: color .18s ease;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        color: var(--grey);
+        text-decoration: none;
+        transition: color .18s ease;
     }
-    .nav a:hover, .nav a:focus-visible { color: var(--ink); }
 
-    /* ---- page content ---- */
-    main { flex: 1; }
+    .nav a:hover,
+    .nav a:focus-visible {
+        color: var(--ink);
+    }
+
+    /* ---------- Main ---------- */
+
+    main {
+        flex: 1;
+    }
+
     .container {
-        max-width: 980px; margin: 0 auto;
-        padding: 64px 40px 100px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 64px 40px 120px;
     }
 
     h1 {
@@ -64,112 +116,213 @@
 
     h2 {
         font-family: var(--sans);
-        font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
-        text-transform: uppercase; color: var(--grey);
-        margin-top: 48px; margin-bottom: 18px;
-        padding-bottom: 10px; border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin-top: 48px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
     }
-    section:first-of-type h2 { margin-top: 0; }
 
-    p { margin-bottom: 18px; font-size: 20px; }
-    section p:last-child { margin-bottom: 0; }
+    section:first-of-type h2 {
+        margin-top: 0;
+    }
 
-    a { text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: border-color .18s ease; }
-    a:hover, a:focus-visible { border-color: var(--ink); }
+    p {
+        margin-bottom: 18px;
+        font-size: 20px;
+    }
 
-    .entry { margin-bottom: 16px; }
-    .entry:last-child { margin-bottom: 0; }
+    section p:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1px;
+        transition: border-color .18s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+        border-color: var(--ink);
+    }
+
+    .entry {
+        margin-bottom: 16px;
+    }
+
+    .entry:last-child {
+        margin-bottom: 0;
+    }
 
     /* Contact */
-    .contact { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
-    .contact .label {
-        display: block; font-family: var(--sans);
-        font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
-        text-transform: uppercase; color: var(--grey); margin-bottom: 14px;
-    }
-    .contact .label.more { margin-top: 30px; }
-    .contact .email { font-size: 16px; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 20px; }
-    .links a { font-size: 16px; }
 
-    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .contact {
+        margin-top: 56px;
+        padding-top: 32px;
+        border-top: 1px solid var(--line);
+    }
+
+    .label {
+        display: block;
+        font-family: var(--sans);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin-bottom: 14px;
+    }
+
+    .label.more {
+        margin-top: 30px;
+    }
+
+    .email {
+        font-size: 16px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 2px;
+    }
+
+    .email:hover,
+    .email:focus-visible {
+        border-color: var(--ink);
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        margin-top: 20px;
+    }
+
+    .links a {
+        font-size: 16px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1px;
+        transition: border-color .18s ease;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+        border-color: var(--ink);
+    }
+
+    a:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+    }
+
+    /* ---------- Mobile ---------- */
 
     @media (max-width: 820px) {
-        .topbar .inner { padding: 18px 26px; }
-        .nav { gap: 22px; }
-        .container { padding: 44px 26px 70px; }
+
+        .topbar .inner {
+            padding: 18px 26px;
+        }
+
+        .nav {
+            gap: 22px;
+        }
+
+        .container {
+            padding: 44px 26px 80px;
+        }
+
+        body {
+            font-size: 21px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 7vw, 2.6rem);
+        }
+
+        p,
+        .email,
+        .links a {
+            font-size: 18px;
+        }
     }
+
 </style>
 </head>
 
 <body>
 
-    <header class="topbar">
-        <div class="inner">
-            <a href="index.html" class="wordmark">Yeeun Hong</a>
-            <nav class="nav" aria-label="Primary">
-                <a href="research.html">Research</a>
-                <a href="cv.html">CV</a>
-            </nav>
-        </div>
-    </header>
+<header class="topbar">
+    <div class="inner">
+        <a href="index.html" class="wordmark">Yeeun Hong</a>
 
-    <main>
-        <div class="container">
-            <h1>Research</h1>
+        <nav class="nav" aria-label="Primary">
+            <a href="research.html">Research</a>
+            <a href="cv.html">CV</a>
+        </nav>
+    </div>
+</header>
 
-            <section>
-                <h2>Research Interests</h2>
-                <p>Im/migration; Race and Ethnicity; Gender and Sexuality; Families; Asian and Asian American Studies; Qualitative Methods</p>
-            </section>
+<main>
+    <div class="container">
+        <h1>Research</h1>
 
-            <section>
-                <h2>Dissertation</h2>
-                <p>My dissertation, "Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships," examines how Asian migrants navigate intimate relationships when marriage represents both genuine partnership and legal security. This research reveals how structural power operates within the most intimate spaces of everyday life. Specifically, I explore how legal status shapes intimate relationships across the full legal status continuum, moving beyond scholarship focused on undocumented/citizen couples to expand empirical scholarship on mixed-status relationships.</p>
-                <p>Drawing on 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders across New York City and Los Angeles, I demonstrate how local implementation of federal policies produces starkly different everyday realities across divergent local contexts, providing insights applicable to understanding large-scale policy implementation more broadly.</p>
-                <p>I am currently conducting fieldwork in New York City, interviewing Asian migrants, their intimate partners, and relevant community stakeholders.</p>
-                <p><a href="https://hongciology.github.io/Flyer.pdf" target="_blank" rel="noopener">Participate in my study!</a></p>
-            </section>
+        <section>
+            <h2>Research Interests</h2>
+            <p>Im/migration; Race and Ethnicity; Gender and Sexuality; Families; Asian and Asian American Studies; Qualitative Methods</p>
+        </section>
 
-            <section>
-                <h2>Publications</h2>
-                <div class="entry">
-                    <p>Dreby, Joanna and <strong>Yeeun Hong</strong>. "But We Don't Talk About It": Silencing and Legal Precarity Among First-, 1.5-, and Second-Generation Asian Immigrants." <em>Social Problems</em>, forthcoming.</p>
-                </div>
-                <div class="entry">
-                    <p>Lee, Eunju, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng. "Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study." <em>Children and Youth Services Review</em>, vol. 172 (May 2025): 108276. <a href="https://doi.org/10.1016/j.childyouth.2025.108276" target="_blank" rel="noopener">https://doi.org/10.1016/j.childyouth.2025.108276</a>.</p>
-                </div>
-            </section>
+        <section>
+            <h2>Dissertation</h2>
+            <p>My dissertation, "Paper Trails to the Altar: The Impact of U.S. Immigration Policies on Asian Migrants' Intimate Relationships," examines how Asian migrants navigate intimate relationships when marriage represents both genuine partnership and legal security. This research reveals how structural power operates within the most intimate spaces of everyday life. Specifically, I explore how legal status shapes intimate relationships across the full legal status continuum.</p>
+            <p>Drawing on 90 in-depth interviews with Asian migrants, their intimate partners, and community stakeholders across New York City and Los Angeles, I demonstrate how local implementation of federal policies produces starkly different everyday realities across divergent local contexts, providing insights applicable to understanding large-scale policy implementation more broadly.</p>
+            <p>I am currently conducting in-depth interviews with Asian migrants, their intimate partners, and relevant community stakeholders.</p>
+            <p><a href="https://hongciology.github.io/Flyer.pdf" target="_blank" rel="noopener">Participate in my study!</a></p>
+        </section>
 
-            <section>
-                <h2>Work in Progress</h2>
-                <div class="entry">
-                    <p><strong>Hong, Yeeun</strong> and Heeyoung Lee. "Selectivity, Assimilation, and the Limits of Education: Immigrant Mortality Trajectories Among Asian and Hispanic Populations in the US." <em>R&amp;R at Sociology of Race and Ethnicity</em>.</p>
-                </div>
-                <div class="entry">
-                    <p><strong>Hong, Yeeun</strong>. "The Sexual Dimension of Liminal Legality: Intimacy and Family Formation among LGBTQ+ Asian Immigrants in the U.S." <em>Manuscript in Preparation</em>.</p>
-                </div>
-                <div class="entry">
-                    <p><strong>Hong, Yeeun</strong>, Jane Jia-Yin Wang, and Angie Y. Chung. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the United States, China, and South Korea." <em>Manuscript in Preparation</em>.</p>
-                </div>
-                <div class="entry">
-                    <p><strong>Hong, Yeeun</strong>, Katelyn HJ Kim, and Paul Y. Chang. "Assimilation Disrupted? How Migrant Wives in South Korea Negotiate Assimilation through Transnational Ties." <em>Manuscript in Preparation</em>.</p>
-                </div>
-            </section>
+        <section>
+            <h2>Publications</h2>
+            <div class="entry">
+                <p>Dreby, Joanna and <strong>Yeeun Hong</strong>. "But We Don't Talk About It": Silencing and Legal Precarity Among First-, 1.5-, and Second-Generation Asian Immigrants." <em>Social Problems</em>, forthcoming.</p>
+            </div>
+            <div class="entry">
+                <p>Lee, Eunju, Joanna Dreby, <strong>Yeeun Hong</strong>, and Tola Seng. "Childhood Immigration Enforcement Exposure and Young Adults' Anxiety: A Mixed Methods Study." <em>Children and Youth Services Review</em>, vol. 172 (May 2025): 108276. <a href="https://doi.org/10.1016/j.childyouth.2025.108276" target="_blank" rel="noopener">https://doi.org/10.1016/j.childyouth.2025.108276</a>.</p>
+            </div>
+        </section>
 
-            <div class="contact">
-                <span class="label">Questions?</span>
-                <a class="email" href="mailto:yhong4@albany.edu">yhong4@albany.edu</a>
-                <span class="label more">Say hi elsewhere</span>
-                <div class="links">
-                    <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
-                    <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
-                    <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
-                </div>
+        <section>
+            <h2>Work in Progress</h2>
+            <div class="entry">
+                <p><strong>Hong, Yeeun</strong> and Heeyoung Lee. "Selectivity, Assimilation, and the Limits of Education: Immigrant Mortality Trajectories Among Asian and Hispanic Populations in the US." <em>R&amp;R at Sociology of Race and Ethnicity</em>.</p>
+            </div>
+            <div class="entry">
+                <p><strong>Hong, Yeeun</strong>. "The Sexual Dimension of Liminal Legality: Intimacy and Family Formation among LGBTQ+ Asian Immigrants in the U.S." <em>Manuscript in Preparation</em>.</p>
+            </div>
+            <div class="entry">
+                <p><strong>Hong, Yeeun</strong>, Jane Jia-Yin Wang, and Angie Y. Chung. "Rethinking Global Hierarchies: Young South Koreans' Post-COVID Perceptions of the United States, China, and South Korea." <em>Manuscript in Preparation</em>.</p>
+            </div>
+            <div class="entry">
+                <p><strong>Hong, Yeeun</strong>, Katelyn HJ Kim, and Paul Y. Chang. "Assimilation Disrupted? How Migrant Wives in South Korea Negotiate Assimilation through Transnational Ties." <em>Manuscript in Preparation</em>.</p>
+            </div>
+        </section>
+
+        <div class="contact">
+            <span class="label">Questions?</span>
+            <a class="email" href="mailto:yhong4@albany.edu">yhong4@albany.edu</a>
+            <span class="label more">Say hi elsewhere</span>
+            <div class="links">
+                <a href="https://www.researchgate.net/profile/Yeeun-Hong-4" target="_blank" rel="noopener">ResearchGate</a>
+                <a href="https://www.linkedin.com/in/yeeun-hong-334b161b5/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://bsky.app/profile/hongciology.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+                <a href="https://x.com/hongciology" target="_blank" rel="noopener">X</a>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
 </body>
 </html>
