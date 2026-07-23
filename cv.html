@@ -131,29 +131,11 @@
         outline-offset: 3px;
     }
 
-    /* Download button */
+    /* Download link */
 
-    .download-btn {
+    .download-link {
         display: inline-block;
-        font-family: var(--sans);
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: var(--bg);
-        background: var(--ink);
-        text-decoration: none;
-        border: 1px solid var(--ink);
-        padding: 12px 22px;
-        border-radius: 3px;
         margin-bottom: 40px;
-        transition: background-color .18s ease, color .18s ease;
-    }
-
-    .download-btn:hover,
-    .download-btn:focus-visible {
-        background: var(--bg);
-        color: var(--ink);
     }
 
     /* PDF viewer */
@@ -294,9 +276,8 @@
 
 <main>
     <div class="container">
-        <h1>Curriculum Vitae</h1>
 
-        <a href="https://hongciology.github.io/YGHCV.pdf" class="download-btn" download target="_blank">Download PDF</a>
+        <a href="https://hongciology.github.io/YGHCV.pdf" class="download-link" download target="_blank">Download PDF</a>
 
         <div class="pdf-viewer-container">
             <embed
@@ -306,7 +287,7 @@
             />
             <div class="fallback-message">
                 <p>Unable to display PDF. Please download it to view.</p>
-                <a href="https://hongciology.github.io/YGHCV.pdf" class="download-btn" download target="_blank">Download PDF</a>
+                <a href="https://hongciology.github.io/YGHCV.pdf" class="download-link" download target="_blank">Download PDF</a>
             </div>
         </div>
 
