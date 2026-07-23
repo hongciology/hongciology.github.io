@@ -115,14 +115,13 @@
     }
 
     .photo {
-        flex: 0 0 460px;
-        width: 460px;
+        flex: 0 0 400px;
+        width: 400px;
     }
 
     .photo img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 5;
+        height: 460px;
         object-fit: cover;
         display: block;
     }
@@ -257,6 +256,7 @@
         }
 
         .statement {
+            order: 1;
             font-size: 1.7rem;
             line-height: 1.32;
             letter-spacing: -0.01em;
@@ -266,27 +266,27 @@
         }
 
         .photo {
+            order: 2;
             flex: none;
             width: 100%;
-            max-width: 260px;
-            margin: 0 auto;
-            border-radius: 50%;
-            overflow: hidden;
+            max-width: 320px;
+            margin: 10px auto;
         }
 
         .photo img {
             width: 100%;
             height: auto;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 4 / 5;
             object-fit: cover;
             object-position: center 15%;
             display: block;
         }
 
         .content-rest {
+            order: 3;
             width: 100%;
             max-width: 34rem;
-            margin-top: 28px;
+            margin-top: 10px;
         }
 
         .bio {
@@ -329,7 +329,7 @@
         <div class="content">
 
             <p class="statement">
-                I study how <em class="highlight">intimate relationship decision-making and family formation</em> <span class="highlight">processes</span> are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
+                I study how <em class="highlight">intimate relationship decision-making and family formation</em> processes are structured by U.S. immigration policies at the intersection of race, gender, and sexuality.
             </p>
 
             <div class="content-rest">
