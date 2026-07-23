@@ -111,13 +111,6 @@
         padding: 64px 40px 120px;
     }
 
-    h1 {
-        font-family: var(--serif);
-        font-weight: 400;
-        font-size: clamp(2.2rem, 4vw, 3rem);
-        margin-bottom: 44px;
-    }
-
     a {
         text-decoration: none;
         border-bottom: 1px solid var(--line);
@@ -139,8 +132,22 @@
 
     .download-link {
         display: inline-block;
-        line-height: 1;
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin-top: 0;
         margin-bottom: 40px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .download-link:hover,
+    .download-link:focus-visible {
+        color: var(--ink);
+        border-color: var(--ink);
     }
 
     /* PDF viewer */
@@ -244,10 +251,6 @@
 
         .container {
             padding: 44px 26px 80px;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 7vw, 2.6rem);
         }
 
         .pdf-embed {
