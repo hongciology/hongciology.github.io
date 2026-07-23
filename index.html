@@ -114,7 +114,7 @@
         padding: 48px 40px;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         gap: 72px;
     }
 
@@ -125,10 +125,17 @@
 
     .photo img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 5;
+        height: 100%;
         object-fit: cover;
         display: block;
+        opacity: 0;
+        animation: fadeInPhoto 2.6s ease-in-out .5s forwards;
+    }
+
+    @keyframes fadeInPhoto {
+        to {
+            opacity: 1;
+        }
     }
 
     .content {
@@ -339,7 +346,7 @@
             <div class="content-rest">
 
                 <p class="bio">
-                    I am a Ph.D. candidate in Sociology at the University at Albany. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods.
+                    I am a Ph.D. candidate in Sociology at the University at Albany. My research areas include Im/migration, Race and Ethnicity, Gender and Sexuality, Families, and Qualitative Methods. Before coming to UAlbany, I received my B.A. in Sociology with a minor in Criminal Justice and earned my M.A. in Asian Studies at the University of Hawai'i at Mānoa.
                 </p>
 
                 <div class="contact">
